@@ -6,16 +6,16 @@
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#0A1416" />
 
-<title>Sharon Mathew — Web Developer &amp; Creative Designer</title>
+<title>Sharon Mathew — Web Developer &amp; Video Editor</title>
 
-<meta name="description" content="Sharon Mathew is a student web developer, graphic designer and video editor from Kerala, India. Browse projects, tools and ways to get in touch." />
+<meta name="description" content="Sharon Mathew is a student web developer and video editor from Kerala, India. Browse interactive builds, tools and ways to connect." />
 
 <link rel="canonical" href="https://sharonmathew023-blip.github.io/SHARON2004/" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sharonmathew023-blip.github.io/SHARON2004/" />
-<meta property="og:title" content="Sharon Mathew — Web Developer &amp; Creative Designer" />
-<meta property="og:description" content="Student web developer, designer and video editor from Kerala, India." />
+<meta property="og:title" content="Sharon Mathew — Web Developer &amp; Video Editor" />
+<meta property="og:description" content="Student web developer, creative designer and video editor from Kerala, India." />
 
 <meta name="twitter:card" content="summary" />
 
@@ -23,15 +23,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
   "name":"Sharon Mathew",
-  "jobTitle":"Web Developer & Creative Designer",
+  "jobTitle":"Web Developer & Video Editor",
   "url":"https://sharonmathew023-blip.github.io/SHARON2004/",
+  "email":"mailto:sharonmathew023@gmail.com",
   "address":{
     "@type":"PostalAddress",
     "addressRegion":"Kerala",
@@ -42,7 +43,8 @@
     "https://www.instagram.com/sh__a_ro_n/",
     "https://www.instagram.com/psy_tranceholic/",
     "https://www.instagram.com/_kira.gfx/",
-    "https://youtube.com/@psy_tranceholic"
+    "https://youtube.com/@psy_tranceholic",
+    "https://t.me/iam_not_nigga"
   ]
 }
 </script>
@@ -51,6 +53,7 @@
   :root{
     --bg:#0A1416;
     --surface:#10201F;
+    --surface-hover:#152A28;
     --line:#233B38;
     --text:#EDF1EA;
     --dim:#97ADA7;
@@ -59,6 +62,7 @@
     --jade:#43BBA0;
     --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
     --body:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',monospace;
     --pad:clamp(20px,6vw,80px);
   }
 
@@ -70,7 +74,7 @@
 
   html{
     scroll-behavior:smooth;
-    scroll-padding-top:72px;
+    scroll-padding-top:76px;
   }
 
   body{
@@ -81,6 +85,7 @@
     line-height:1.6;
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 50% 0%, rgba(67,187,160,0.06) 0%, transparent 60%);
   }
 
   a{
@@ -100,7 +105,7 @@
   :focus-visible{
     outline:2px solid var(--gold);
     outline-offset:4px;
-    border-radius:4px;
+    border-radius:6px;
   }
 
   .skip{
@@ -138,17 +143,17 @@
     justify-content:space-between;
     align-items:center;
     padding:16px var(--pad);
-    background:rgba(10,20,22,.88);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    background:rgba(10,20,22,.85);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line);
   }
 
   .wordmark{
     font-family:var(--display);
-    font-weight:700;
-    font-size:20px;
-    letter-spacing:-.01em;
+    font-weight:800;
+    font-size:21px;
+    letter-spacing:-.02em;
   }
 
   .wordmark i{
@@ -158,7 +163,7 @@
 
   nav ul{
     display:flex;
-    gap:clamp(16px,3.5vw,38px);
+    gap:clamp(18px,3.5vw,38px);
   }
 
   nav ul a{
@@ -170,7 +175,8 @@
     transition:color .2s,border-color .2s;
   }
 
-  nav ul a:hover{
+  nav ul a:hover,
+  nav ul a.active{
     color:var(--text);
     border-color:var(--gold);
   }
@@ -182,19 +188,50 @@
     flex-direction:column;
     justify-content:center;
     padding:48px var(--pad) 40px;
+    max-width:1280px;
+    margin:0 auto;
     position:relative;
+  }
+
+  .status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    align-self:flex-start;
+    padding:6px 14px;
+    border-radius:99px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    font-size:13px;
+    font-weight:600;
+    color:var(--dim);
+    margin-bottom:18px;
+  }
+
+  .status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--jade);
+    box-shadow:0 0 10px var(--jade);
+    animation:pulse 2s infinite;
+  }
+
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(.85)}
   }
 
   .greet{
     font-size:clamp(17px,2.2vw,22px);
     color:var(--dim);
-    margin-bottom:6px;
+    margin-bottom:4px;
   }
 
   #name{
     font-family:var(--display);
-    font-size:clamp(76px,20vw,300px);
-    line-height:.9;
+    font-size:clamp(74px,19vw,280px);
+    line-height:.88;
     font-weight:800;
     letter-spacing:-.02em;
     display:flex;
@@ -202,11 +239,14 @@
     margin-left:-.04em;
     user-select:none;
     -webkit-user-select:none;
+    cursor:grab;
+    touch-action:pan-y;
   }
 
   #name .ch{
     display:inline-block;
     font-variation-settings:'wght' 800,'wdth' 100,'opsz' 96;
+    transition:font-variation-settings .18s ease-out, color .2s ease, transform .2s ease;
     animation:rise .95s cubic-bezier(.2,.9,.2,1) both;
     animation-delay:calc(var(--i)*80ms + 120ms);
   }
@@ -240,7 +280,7 @@
 
   .lede b{
     color:var(--text);
-    font-weight:500;
+    font-weight:600;
   }
 
   .cta{
@@ -252,6 +292,7 @@
   .btn{
     display:inline-flex;
     align-items:center;
+    gap:8px;
     padding:14px 26px;
     border-radius:12px;
     font-weight:700;
@@ -282,9 +323,12 @@
 
   .hint{
     margin-top:26px;
-    font-size:14px;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
     color:var(--dim);
-    opacity:.8;
+    opacity:.75;
   }
 
   /* Shared section scaffolding */
@@ -294,9 +338,19 @@
     margin:0 auto;
   }
 
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--jade);
+    margin-bottom:10px;
+    display:block;
+  }
+
   h2{
     font-family:var(--display);
-    font-weight:700;
+    font-weight:800;
     font-size:clamp(36px,6vw,68px);
     line-height:1.02;
     letter-spacing:-.02em;
@@ -329,7 +383,7 @@
     padding:28px 18px 28px 22px;
     border-bottom:1px solid var(--line);
     position:relative;
-    transition:background .25s;
+    transition:background .25s, padding-left .25s;
   }
 
   .row::before{
@@ -348,6 +402,7 @@
   .row:hover,
   .row:focus-visible{
     background:var(--surface);
+    padding-left:28px;
   }
 
   .row:hover::before,
@@ -374,12 +429,19 @@
     max-width:34em;
   }
 
-  .kind{
-    display:inline-block;
+  .tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
     margin-top:12px;
+  }
+
+  .kind{
     font-size:13px;
+    font-weight:500;
     color:var(--jade);
-    border:1px solid var(--line);
+    background:rgba(67,187,160,.08);
+    border:1px solid rgba(67,187,160,.25);
     border-radius:99px;
     padding:3px 12px;
   }
@@ -405,6 +467,12 @@
     border-bottom:2px solid var(--gold);
     padding-bottom:2px;
     white-space:nowrap;
+    transition:color .2s, transform .2s;
+  }
+
+  .row:hover .go{
+    color:var(--gold);
+    transform:translateX(4px);
   }
 
   @media(max-width:720px){
@@ -428,7 +496,7 @@
   /* About */
   .about{
     display:grid;
-    grid-template-columns:1.25fr 1fr;
+    grid-template-columns:1.2fr 1fr;
     gap:clamp(32px,6vw,80px);
     align-items:start;
   }
@@ -440,7 +508,7 @@
   }
 
   .about-copy{
-    font-size:clamp(19px,2.4vw,25px);
+    font-size:clamp(19px,2.4vw,24px);
     line-height:1.55;
   }
 
@@ -455,41 +523,51 @@
   .panel{
     background:var(--surface);
     border:1px solid var(--line);
-    border-radius:18px;
+    border-radius:20px;
     padding:clamp(22px,3vw,34px);
   }
 
   .panel h3{
     font-family:var(--display);
-    font-size:22px;
+    font-size:20px;
     font-weight:700;
-    margin-bottom:6px;
+    margin-bottom:12px;
   }
 
-  .tools+h3{
-    margin-top:26px;
+  .tool-pills+.panel-sub{
+    margin-top:24px;
   }
 
-  .tools li{
+  .tool-pills{
     display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .tool-pills li{
+    display:inline-flex;
     align-items:center;
-    gap:12px;
-    padding:10px 0;
-    border-bottom:1px solid var(--line);
-    font-weight:500;
+    gap:8px;
+    padding:7px 14px;
+    border-radius:10px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    font-size:14px;
+    font-weight:600;
+    transition:border-color .2s, transform .2s;
   }
 
-  .tools li:last-child{
-    border-bottom:none;
+  .tool-pills li:hover{
+    border-color:var(--c,var(--gold));
+    transform:translateY(-2px);
   }
 
-  .tools li::before{
+  .tool-pills li::before{
     content:"";
-    width:9px;
-    height:9px;
+    width:8px;
+    height:8px;
     border-radius:50%;
     background:var(--c,var(--gold));
-    flex:none;
   }
 
   .now{
@@ -499,7 +577,7 @@
     display:grid;
     grid-template-columns:auto 1fr;
     gap:8px 18px;
-    font-size:16px;
+    font-size:15px;
   }
 
   .now dt{
@@ -507,37 +585,237 @@
   }
 
   .now dd{
-    font-weight:500;
+    font-weight:600;
   }
 
-  /* Contact */
-  .contact{
-    text-align:left;
+  /* Connect & Social Grid (Inspired by Reference) */
+  .social-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    margin-bottom:clamp(56px, 8vw, 90px);
   }
 
-  .contact h2{
-    font-size:clamp(48px,11vw,150px);
-    line-height:.95;
+  @media(min-width:960px){
+    .social-grid{
+      grid-template-columns:repeat(3, 1fr);
+    }
   }
 
-  .contact p{
-    margin:22px 0 32px;
-    font-size:clamp(18px,2.3vw,24px);
-    color:var(--dim);
-    max-width:28em;
+  @media(max-width:520px){
+    .social-grid{
+      gap:10px;
+    }
   }
 
-  .contact .cta{
-    max-width:1000px;
+  .s-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    background:rgba(16, 32, 31, 0.65);
+    border:1px solid var(--line);
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.9,.2,1), border-color .25s, background .25s, box-shadow .25s;
   }
 
-  .contact .btn{
+  .s-card:hover{
+    transform:translateY(-4px);
+    background:var(--surface-hover);
+    border-color:var(--brand, var(--gold));
+    box-shadow:0 12px 30px -12px rgba(0,0,0,.6);
+  }
+
+  .s-icon{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    flex-shrink:0;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--brand, var(--gold));
+    transition:transform .25s, background .25s;
+  }
+
+  .s-card:hover .s-icon{
+    transform:scale(1.08);
+    background:rgba(255,255,255,0.07);
+  }
+
+  .s-icon svg{
+    width:22px;
+    height:22px;
+    fill:currentColor;
+  }
+
+  .s-meta{
+    min-width:0;
+  }
+
+  .s-meta strong{
+    display:block;
+    font-family:var(--display);
     font-size:17px;
-    padding:16px 24px;
+    font-weight:700;
+    line-height:1.2;
+    color:var(--text);
+  }
+
+  .s-meta span{
+    display:block;
+    font-size:13px;
+    color:var(--dim);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-top:2px;
+  }
+
+  @media(max-width:480px){
+    .s-card{
+      padding:12px 12px;
+      gap:10px;
+      border-radius:14px;
+    }
+    .s-icon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+    }
+    .s-icon svg{
+      width:18px;
+      height:18px;
+    }
+    .s-meta strong{
+      font-size:14px;
+    }
+    .s-meta span{
+      font-size:11.5px;
+    }
+  }
+
+  /* Direct Reach Out List */
+  .reach-box{
+    margin-top:20px;
+  }
+
+  .reach-title{
+    font-family:var(--display);
+    font-size:clamp(40px, 8vw, 88px);
+    font-weight:800;
+    line-height:.95;
+    letter-spacing:-.025em;
+    margin-bottom:28px;
+  }
+
+  .reach-title span{
+    color:var(--gold);
+  }
+
+  .reach-list{
+    border-top:1px solid var(--line);
+  }
+
+  .reach-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:20px 14px;
+    border-bottom:1px solid var(--line);
+    transition:background .2s, padding-left .2s;
+  }
+
+  .reach-item:hover{
+    background:var(--surface);
+    padding-left:22px;
+  }
+
+  .reach-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    min-width:0;
+  }
+
+  .reach-ico{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--surface);
+    border:1px solid var(--line);
+    color:var(--brand, var(--gold));
+    flex-shrink:0;
+  }
+
+  .reach-ico svg{
+    width:20px;
+    height:20px;
+    fill:currentColor;
+  }
+
+  .reach-text strong{
+    display:block;
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:700;
+    line-height:1.2;
+  }
+
+  .reach-text span{
+    display:block;
+    font-size:14px;
+    color:var(--dim);
+    margin-top:2px;
+    word-break:break-all;
+  }
+
+  .reach-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+  }
+
+  .copy-btn{
+    background:var(--bg);
+    color:var(--dim);
+    border:1px solid var(--line);
+    padding:7px 12px;
+    border-radius:8px;
+    font-family:var(--mono);
+    font-size:12px;
+    cursor:pointer;
+    transition:border-color .2s, color .2s;
+  }
+
+  .copy-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  .chev{
+    font-family:var(--mono);
+    font-size:20px;
+    color:var(--dim);
+    transition:transform .2s, color .2s;
+  }
+
+  .reach-item:hover .chev{
+    transform:translateX(5px);
+    color:var(--gold);
   }
 
   footer{
     padding:30px var(--pad) 44px;
+    max-width:1280px;
+    margin:0 auto;
     display:flex;
     justify-content:space-between;
     gap:10px 30px;
@@ -550,34 +828,28 @@
     margin:0 var(--pad);
   }
 
-  @media(max-width:600px){
-    .contact .cta{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      width:100%;
-    }
+  /* Scroll Reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.2,1);
+  }
 
-    .contact .btn{
-      justify-content:center;
-      text-align:center;
-      padding:14px 12px;
-    }
+  .reveal.in{
+    opacity:1;
+    transform:none;
   }
 
   @media(prefers-reduced-motion:reduce){
     html{
       scroll-behavior:auto;
     }
-
-    #name .ch{
+    #name .ch, .status-dot{
       animation:none;
     }
-
-    .row,
-    .row::before,
-    .art svg,
-    .btn{
-      transition:none;
+    .reveal{
+      opacity:1;
+      transform:none;
     }
   }
 </style>
@@ -590,18 +862,23 @@
 <!-- NAV -->
 <nav aria-label="Main">
   <a class="wordmark" href="#home" aria-label="Sharon Mathew, home">
-    Sharon<i>.</i>
+    SHARON<i>.</i>
   </a>
 
   <ul>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Connect</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <header class="hero" id="home">
+
+  <div class="status-pill">
+    <span class="status-dot"></span>
+    <span>Available for freelance &amp; collabs</span>
+  </div>
 
   <p class="greet">Hi, I'm</p>
 
@@ -616,18 +893,17 @@
 
   <div class="hero-row">
     <p class="lede">
-      <b>Sharon Mathew</b> is a student from Kerala who builds websites,
-      designs visuals and edits video.
+      <b>Sharon Mathew</b> is a developer and creator from Kerala who builds interactive websites, crafts visuals and edits high-energy video.
     </p>
 
     <div class="cta">
-      <a class="btn gold" href="#work">See my work</a>
-      <a class="btn line" href="#contact">Say hello</a>
+      <a class="btn gold" href="#work">See my builds</a>
+      <a class="btn line" href="#contact">Reach out</a>
     </div>
   </div>
 
   <p class="hint">
-    Try dragging your cursor or finger across my name.
+    // Move your cursor or slide your finger across my name
   </p>
 
 </header>
@@ -635,206 +911,48 @@
 <div class="kasavu" role="presentation"></div>
 
 <!-- WORK -->
-<section id="work">
+<section id="work" class="reveal">
 
+  <span class="eyebrow">// Selected Builds</span>
   <div class="sec-head">
     <h2>Things I've built</h2>
-    <p>Small projects, each one made to figure something out.</p>
+    <p>Small interactive web projects, each one built to figure something out.</p>
   </div>
 
   <ul class="rows">
 
     <li>
-  <a class="row" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener">
-    <div>
-      <h3>Valentine</h3>
-      <p>An interactive, Valentine-themed web page.</p>
-      <span class="kind">Interactive page</span>
-    </div>
-
-    <div class="art" aria-hidden="true">
-      <svg viewBox="0 0 160 110" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M80 94C30 62 36 22 64 24c8 1 14 6 16 13 2-7 8-12 16-13 28-2 34 38-16 70z"
-          fill="#FF7A5C" fill-opacity=".16" stroke="#FF7A5C" stroke-width="2.5"/>
-        <path d="M122 18v12M116 24h12M34 78v8M30 82h8"
-          stroke="#F2B84B" stroke-width="2.5"/>
-      </svg>
-    </div>
-  </a>
-    </li>
-
-    <li>
-      <a class="row" href="https://github.com/sharonmathew023-blip/echora-messenger/index.html" target="_blank" rel="noopener">
+      <a class="row" href="https://sharonmathew023-blip.github.io/valentine/" target="_blank" rel="noopener">
         <div>
-          <h3>Echora Messenger</h3>
-          <p>A messenger interface, built as a UI experiment.</p>
-          <span class="kind">UI experiment</span>
+          <h3>Valentine</h3>
+          <p>An interactive, Valentine-themed micro-site with playful DOM animations.</p>
+          <div class="tags">
+            <span class="kind">Interactive Page</span>
+          </div>
         </div>
 
         <div class="art" aria-hidden="true">
           <svg viewBox="0 0 160 110" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16h78a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10H46l-14 12V50h-10a10 10 0 0 1-10-10V26a10 10 0 0 1 10-10z"
-              stroke="#43BBA0" stroke-width="2.5"/>
-            <path d="M30 30h46M30 40h28"
-              stroke="#43BBA0" stroke-width="3"/>
-            <path d="M60 62h78a10 10 0 0 1 10 10v12a10 10 0 0 1-10 10h-10v10l-14-10H60a10 10 0 0 1-10-10V72a10 10 0 0 1 10-10z"
-              transform="translate(-2 -10)"
-              stroke="#F2B84B"
-              stroke-width="2.5"/>
-            <path d="M66 62h50M66 72h30"
-              stroke="#F2B84B"
-              stroke-width="3"/>
+            <path d="M80 94C30 62 36 22 64 24c8 1 14 6 16 13 2-7 8-12 16-13 28-2 34 38-16 70z"
+              fill="#FF7A5C" fill-opacity=".16" stroke="#FF7A5C" stroke-width="2.5"/>
+            <path d="M122 18v12M116 24h12M34 78v8M30 82h8"
+              stroke="#F2B84B" stroke-width="2.5"/>
           </svg>
         </div>
 
-        <span class="go">View code</span>
+        <span class="go">Live Demo →</span>
       </a>
     </li>
 
     <li>
-      <a class="row" href="https://github.com/sharonmathew023-blip/Game/index.html" target="_blank" rel="noopener">
+      <a class="row" href="https://github.com/sharonmathew023-blip/echora-messenger" target="_blank" rel="noopener">
         <div>
-          <h3>Game</h3>
-          <p>A small browser game written in JavaScript.</p>
-          <span class="kind">JavaScript game</span>
+          <h3>Echora Messenger</h3>
+          <p>A sleek messenger interface built as a front-end layout and UI experiment.</p>
+          <div class="tags">
+            <span class="kind">UI Experiment</span>
+          </div>
         </div>
 
         <div class="art" aria-hidden="true">
-          <svg viewBox="0 0 160 110" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="10" width="144" height="90" rx="8"
-              stroke="#233B38" stroke-width="2"/>
-            <path d="M80 14v82"
-              stroke="#97ADA7"
-              stroke-width="2"
-              stroke-dasharray="4 7"/>
-            <rect x="20" y="34" width="8" height="36" rx="3"
-              fill="#43BBA0"/>
-            <rect x="132" y="48" width="8" height="36" rx="3"
-              fill="#F2B84B"/>
-            <circle cx="96" cy="56" r="6"
-              fill="#FF7A5C"/>
-            <path d="M84 62l-10 6M76 58l-8 4"
-              stroke="#FF7A5C"
-              stroke-opacity=".5"
-              stroke-width="2"/>
-          </svg>
-        </div>
-
-<!-- ABOUT -->
-<section id="about">
-
-  <div class="sec-head">
-    <h2>About me</h2>
-  </div>
-
-  <div class="about">
-
-    <div class="about-copy">
-      <p>
-        I'm a student in Kerala who likes the place where code meets design.
-      </p>
-
-      <p class="soft">
-        I build websites, make visuals in Photoshop and edit video in Alight Motion.
-        I learn by building, so every project here started as something I wanted to figure out.
-      </p>
-
-      <p class="soft">
-        Right now I'm looking for creative projects to work on.
-      </p>
-    </div>
-
-    <aside class="panel" aria-label="Tools and focus">
-
-      <h3>Build</h3>
-
-      <ul class="tools">
-        <li style="--c:#F2B84B">HTML and CSS</li>
-        <li style="--c:#F2B84B">JavaScript</li>
-        <li style="--c:#F2B84B">Python</li>
-      </ul>
-
-      <h3>Create</h3>
-
-      <ul class="tools">
-        <li style="--c:#FF7A5C">Photoshop</li>
-        <li style="--c:#FF7A5C">Alight Motion</li>
-      </ul>
-
-      <dl class="now">
-        <dt>Based in</dt>
-        <dd>Kerala, India</dd>
-
-        <dt>Open to</dt>
-        <dd>Collaborations</dd>
-      </dl>
-
-    </aside>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-
-  <h2>Let's make something.</h2>
-
-  <p>
-    I'm open to creative web projects, video editing,
-    graphic design and collaborations.
-  </p>
-
-  <div class="cta">
-
-    <a class="btn gold"
-       href="https://wa.me/919778296916"
-       target="_blank"
-       rel="noopener">
-      WhatsApp
-    </a>
-
-    <a class="btn line"
-       href="https://github.com/sharonmathew023-blip"
-       target="_blank"
-       rel="noopener">
-      GitHub
-    </a>
-
-    <a class="btn line"
-       href="https://www.instagram.com/sh__a_ro_n/"
-       target="_blank"
-       rel="noopener">
-      Instagram
-    </a>
-
-    <a class="btn line"
-       href="https://www.instagram.com/psy_tranceholic/"
-       target="_blank"
-       rel="noopener">
-      Video Editing
-    </a>
-
-    <a class="btn line"
-       href="https://www.instagram.com/_kira.gfx/"
-       target="_blank"
-       rel="noopener">
-      GFX Design
-    </a>
-
-    <a class="btn line"
-       href="https://youtube.com/@psy_tranceholic"
-       target="_blank"
-       rel="noopener">
-      YouTube
-    </a>
-
-  </div>
-</section>
-
-<div class="kasavu foot-band" role="presentation"></div>
-
-<footer>
-  <span>© 2026 Sharon Mathew</span>
-</footer>
-
-<script>
+          <svg viewBox="0 0 160 1
