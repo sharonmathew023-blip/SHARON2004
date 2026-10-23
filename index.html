@@ -5,954 +5,110 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#0A1416" />
-
-<title>Sharon Mathew — Web Developer &amp; Video Editor</title>
-
+<title>Sharon Mathew — Web Developer & Video Editor</title>
 <meta name="description" content="Sharon Mathew is a student web developer and video editor from Kerala, India. Browse interactive builds, tools and ways to connect." />
-
 <link rel="canonical" href="https://sharonmathew023-blip.github.io/SHARON2004/" />
-
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sharonmathew023-blip.github.io/SHARON2004/" />
-<meta property="og:title" content="Sharon Mathew — Web Developer &amp; Video Editor" />
+<meta property="og:title" content="Sharon Mathew — Web Developer & Video Editor" />
 <meta property="og:description" content="Student web developer, creative designer and video editor from Kerala, India." />
-
-<meta name="twitter:card" content="summary" />
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1416'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23F2B84B'%3ES%3C/text%3E%3C/svg%3E" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-
+<meta property="og:image" content="https://sharonmathew023-blip.github.io/SHARON2004/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:#0A1416;color:#E6E9E2;font-family:"Bricolage Grotesque",sans-serif;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#F2B84B 0 18px,#0A1416 18px 22px);z-index:9999}
+body::after{content:"";position:fixed;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#F2B84B 0 18px,#0A1416 18px 22px);z-index:9999}
+.muted{color:#9AA49F} .tiny{font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.nav{position:sticky;top:6px;z-index:50;background:rgba(10,20,22,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;padding:14px 5%;}
+.nav a{color:#9AA49F;text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.nav a:hover,.nav a.active{color:#F2B84B}
+.hero{min-height:92vh;display:grid;place-items:center;padding:6% 5%;text-align:center}
+#name{font-size:clamp(48px,11vw,160px);line-height:.85;letter-spacing:-.04em;font-weight:800;text-transform:uppercase;display:flex;flex-wrap:wrap;justify-content:center;gap:.02em;cursor:pointer}
+#name .ch{display:inline-block;transition:transform .15s linear}
+.hint{margin-top:18px;color:#6A7570;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+.section{padding:80px 5%;max-width:1200px;margin:0 auto}
+.kicker{color:#F2B84B;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.work-grid{display:grid;gap:20px;margin-top:32px}
+.row{display:grid;grid-template-columns:110px 1fr auto;gap:24px;align-items:center;padding:24px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(255,255,255,.02);transition:all .25s}
+.row:hover{border-color:rgba(242,184,75,.4);transform:translateY(-2px)}
+.row .num{font-size:42px;font-weight:800;opacity:.15}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);padding:4px 10px;border-radius:100px;margin-right:6px}
+.link{color:#F2B84B;text-decoration:none;font-size:13px}
+.social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}
+.s-card{border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;background:rgba(255,255,255,.02);display:flex;justify-content:space-between;align-items:center;transition:.25s;text-decoration:none;color:inherit}
+.s-card:hover{border-color:var(--acc,rgba(242,184,75,.5));transform:translateY(-2px)}
+.s-card .left{display:flex;gap:12px;align-items:center}
+.dot{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:700}
+.footer{padding:30px 5%;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;color:#6A7570;font-size:12px}
+.reveal{opacity:0;transform:translateY(18px);transition:all .7s}
+.reveal.in{opacity:1;transform:none}
+</style>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Person",
-  "name":"Sharon Mathew",
-  "jobTitle":"Web Developer & Video Editor",
-  "url":"https://sharonmathew023-blip.github.io/SHARON2004/",
-  "email":"mailto:sharonmathew023@gmail.com",
-  "address":{
-    "@type":"PostalAddress",
-    "addressRegion":"Kerala",
-    "addressCountry":"IN"
-  },
-  "sameAs":[
-    "https://github.com/sharonmathew023-blip",
-    "https://www.instagram.com/sh__a_ro_n/",
-    "https://www.instagram.com/psy_tranceholic/",
-    "https://www.instagram.com/_kira.gfx/",
-    "https://youtube.com/@psy_tranceholic",
-    "https://t.me/iam_not_nigga"
-  ]
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Sharon Mathew",
+ "sameAs":[
+  "https://github.com/sharonmathew023-blip",
+  "https://www.instagram.com/psy_tranceholic/",
+  "https://www.instagram.com/kira_gfx_01/",
+  "https://www.youtube.com/@psy_tranceholic",
+  "https://t.me/iam_not_nigga",
+  "https://www.snapchat.com/add/sha_ron813?share_id=mlICT1Z1Pg8&locale=en-MM"
+ ]
 }
 </script>
-
-<style>
-  :root{
-    --bg:#0A1416;
-    --surface:#10201F;
-    --surface-hover:#152A28;
-    --line:#233B38;
-    --text:#EDF1EA;
-    --dim:#97ADA7;
-    --gold:#F2B84B;
-    --coral:#FF7A5C;
-    --jade:#43BBA0;
-    --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
-    --body:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
-    --mono:'JetBrains Mono',monospace;
-    --pad:clamp(20px,6vw,80px);
-  }
-
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-
-  html{
-    scroll-behavior:smooth;
-    scroll-padding-top:76px;
-  }
-
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--body);
-    font-size:17px;
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(circle at 50% 0%, rgba(67,187,160,0.06) 0%, transparent 60%);
-  }
-
-  a{
-    color:inherit;
-    text-decoration:none;
-  }
-
-  ul{
-    list-style:none;
-  }
-
-  ::selection{
-    background:var(--gold);
-    color:var(--bg);
-  }
-
-  :focus-visible{
-    outline:2px solid var(--gold);
-    outline-offset:4px;
-    border-radius:6px;
-  }
-
-  .skip{
-    position:absolute;
-    left:-999px;
-    top:8px;
-    background:var(--gold);
-    color:var(--bg);
-    padding:8px 14px;
-    border-radius:8px;
-    font-weight:700;
-    z-index:99;
-  }
-
-  .skip:focus{
-    left:8px;
-  }
-
-  /* Kasavu-inspired border */
-  .kasavu{
-    height:12px;
-    opacity:.75;
-    background:
-      linear-gradient(var(--gold),var(--gold)) top/100% 2px no-repeat,
-      linear-gradient(var(--gold),var(--gold)) bottom/100% 2px no-repeat,
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12'%3E%3Cpath d='M9 2l4 4-4 4-4-4z' fill='%23F2B84B'/%3E%3C/svg%3E") center/18px 12px repeat-x;
-  }
-
-  /* Nav */
-  nav{
-    position:sticky;
-    top:0;
-    z-index:50;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px var(--pad);
-    background:rgba(10,20,22,.85);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
-  }
-
-  .wordmark{
-    font-family:var(--display);
-    font-weight:800;
-    font-size:21px;
-    letter-spacing:-.02em;
-  }
-
-  .wordmark i{
-    font-style:normal;
-    color:var(--gold);
-  }
-
-  nav ul{
-    display:flex;
-    gap:clamp(18px,3.5vw,38px);
-  }
-
-  nav ul a{
-    font-size:15px;
-    font-weight:500;
-    color:var(--dim);
-    padding:6px 0;
-    border-bottom:2px solid transparent;
-    transition:color .2s,border-color .2s;
-  }
-
-  nav ul a:hover,
-  nav ul a.active{
-    color:var(--text);
-    border-color:var(--gold);
-  }
-
-  /* Hero */
-  .hero{
-    min-height:calc(100svh - 62px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:48px var(--pad) 40px;
-    max-width:1280px;
-    margin:0 auto;
-    position:relative;
-  }
-
-  .status-pill{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    align-self:flex-start;
-    padding:6px 14px;
-    border-radius:99px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    font-size:13px;
-    font-weight:600;
-    color:var(--dim);
-    margin-bottom:18px;
-  }
-
-  .status-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--jade);
-    box-shadow:0 0 10px var(--jade);
-    animation:pulse 2s infinite;
-  }
-
-  @keyframes pulse{
-    0%,100%{opacity:1;transform:scale(1)}
-    50%{opacity:.5;transform:scale(.85)}
-  }
-
-  .greet{
-    font-size:clamp(17px,2.2vw,22px);
-    color:var(--dim);
-    margin-bottom:4px;
-  }
-
-  #name{
-    font-family:var(--display);
-    font-size:clamp(74px,19vw,280px);
-    line-height:.88;
-    font-weight:800;
-    letter-spacing:-.02em;
-    display:flex;
-    flex-wrap:nowrap;
-    margin-left:-.04em;
-    user-select:none;
-    -webkit-user-select:none;
-    cursor:grab;
-    touch-action:pan-y;
-  }
-
-  #name .ch{
-    display:inline-block;
-    font-variation-settings:'wght' 800,'wdth' 100,'opsz' 96;
-    transition:font-variation-settings .18s ease-out, color .2s ease, transform .2s ease;
-    animation:rise .95s cubic-bezier(.2,.9,.2,1) both;
-    animation-delay:calc(var(--i)*80ms + 120ms);
-  }
-
-  @keyframes rise{
-    from{
-      opacity:0;
-      transform:translateY(42%);
-    }
-    to{
-      opacity:1;
-      transform:none;
-    }
-  }
-
-  .hero-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:28px 48px;
-    flex-wrap:wrap;
-    margin-top:clamp(22px,4vw,44px);
-  }
-
-  .lede{
-    font-size:clamp(18px,2.3vw,24px);
-    line-height:1.5;
-    max-width:30em;
-    color:var(--dim);
-  }
-
-  .lede b{
-    color:var(--text);
-    font-weight:600;
-  }
-
-  .cta{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:14px 26px;
-    border-radius:12px;
-    font-weight:700;
-    font-size:16px;
-    border:2px solid var(--line);
-    transition:transform .2s,background .2s,border-color .2s,color .2s;
-  }
-
-  .btn:hover{
-    transform:translateY(-3px);
-  }
-
-  .btn.gold{
-    background:var(--gold);
-    border-color:var(--gold);
-    color:var(--bg);
-  }
-
-  .btn.gold:hover{
-    background:var(--text);
-    border-color:var(--text);
-  }
-
-  .btn.line:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-  }
-
-  .hint{
-    margin-top:26px;
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--dim);
-    opacity:.75;
-  }
-
-  /* Shared section scaffolding */
-  section{
-    padding:clamp(64px,10vw,120px) var(--pad);
-    max-width:1280px;
-    margin:0 auto;
-  }
-
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:13px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--jade);
-    margin-bottom:10px;
-    display:block;
-  }
-
-  h2{
-    font-family:var(--display);
-    font-weight:800;
-    font-size:clamp(36px,6vw,68px);
-    line-height:1.02;
-    letter-spacing:-.02em;
-  }
-
-  .sec-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:16px 40px;
-    flex-wrap:wrap;
-    margin-bottom:clamp(28px,4vw,48px);
-  }
-
-  .sec-head p{
-    color:var(--dim);
-    max-width:24em;
-  }
-
-  /* Work */
-  .rows{
-    border-top:1px solid var(--line);
-  }
-
-  .row{
-    display:grid;
-    grid-template-columns:1fr 170px auto;
-    align-items:center;
-    gap:18px 32px;
-    padding:28px 18px 28px 22px;
-    border-bottom:1px solid var(--line);
-    position:relative;
-    transition:background .25s, padding-left .25s;
-  }
-
-  .row::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:4px;
-    background:var(--gold);
-    transform:scaleY(0);
-    transform-origin:top;
-    transition:transform .3s cubic-bezier(.2,.9,.2,1);
-  }
-
-  .row:hover,
-  .row:focus-visible{
-    background:var(--surface);
-    padding-left:28px;
-  }
-
-  .row:hover::before,
-  .row:focus-visible::before{
-    transform:scaleY(1);
-  }
-
-  .row h3{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(26px,4vw,42px);
-    line-height:1.1;
-    letter-spacing:-.015em;
-    transition:color .2s;
-  }
-
-  .row:hover h3{
-    color:var(--gold);
-  }
-
-  .row p{
-    color:var(--dim);
-    margin-top:6px;
-    max-width:34em;
-  }
-
-  .tags{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:12px;
-  }
-
-  .kind{
-    font-size:13px;
-    font-weight:500;
-    color:var(--jade);
-    background:rgba(67,187,160,.08);
-    border:1px solid rgba(67,187,160,.25);
-    border-radius:99px;
-    padding:3px 12px;
-  }
-
-  .art{
-    width:170px;
-  }
-
-  .art svg{
-    width:100%;
-    height:auto;
-    display:block;
-    transition:transform .35s cubic-bezier(.2,.9,.2,1);
-  }
-
-  .row:hover .art svg{
-    transform:rotate(-4deg) scale(1.08);
-  }
-
-  .go{
-    font-weight:700;
-    font-size:15px;
-    border-bottom:2px solid var(--gold);
-    padding-bottom:2px;
-    white-space:nowrap;
-    transition:color .2s, transform .2s;
-  }
-
-  .row:hover .go{
-    color:var(--gold);
-    transform:translateX(4px);
-  }
-
-  @media(max-width:720px){
-    .row{
-      grid-template-columns:1fr 110px;
-      padding-left:16px;
-    }
-
-    .art{
-      width:110px;
-      grid-column:2;
-      grid-row:1;
-    }
-
-    .go{
-      grid-column:1;
-      justify-self:start;
-    }
-  }
-
-  /* About */
-  .about{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:clamp(32px,6vw,80px);
-    align-items:start;
-  }
-
-  @media(max-width:860px){
-    .about{
-      grid-template-columns:1fr;
-    }
-  }
-
-  .about-copy{
-    font-size:clamp(19px,2.4vw,24px);
-    line-height:1.55;
-  }
-
-  .about-copy p+p{
-    margin-top:1.1em;
-  }
-
-  .about-copy .soft{
-    color:var(--dim);
-  }
-
-  .panel{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:clamp(22px,3vw,34px);
-  }
-
-  .panel h3{
-    font-family:var(--display);
-    font-size:20px;
-    font-weight:700;
-    margin-bottom:12px;
-  }
-
-  .tool-pills+.panel-sub{
-    margin-top:24px;
-  }
-
-  .tool-pills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-
-  .tool-pills li{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:7px 14px;
-    border-radius:10px;
-    background:var(--bg);
-    border:1px solid var(--line);
-    font-size:14px;
-    font-weight:600;
-    transition:border-color .2s, transform .2s;
-  }
-
-  .tool-pills li:hover{
-    border-color:var(--c,var(--gold));
-    transform:translateY(-2px);
-  }
-
-  .tool-pills li::before{
-    content:"";
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--c,var(--gold));
-  }
-
-  .now{
-    margin-top:26px;
-    border-top:1px solid var(--line);
-    padding-top:20px;
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:8px 18px;
-    font-size:15px;
-  }
-
-  .now dt{
-    color:var(--dim);
-  }
-
-  .now dd{
-    font-weight:600;
-  }
-
-  /* Connect & Social Grid (Inspired by Reference) */
-  .social-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:14px;
-    margin-bottom:clamp(56px, 8vw, 90px);
-  }
-
-  @media(min-width:960px){
-    .social-grid{
-      grid-template-columns:repeat(3, 1fr);
-    }
-  }
-
-  @media(max-width:520px){
-    .social-grid{
-      gap:10px;
-    }
-  }
-
-  .s-card{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:16px 18px;
-    background:rgba(16, 32, 31, 0.65);
-    border:1px solid var(--line);
-    border-radius:18px;
-    position:relative;
-    overflow:hidden;
-    transition:transform .25s cubic-bezier(.2,.9,.2,1), border-color .25s, background .25s, box-shadow .25s;
-  }
-
-  .s-card:hover{
-    transform:translateY(-4px);
-    background:var(--surface-hover);
-    border-color:var(--brand, var(--gold));
-    box-shadow:0 12px 30px -12px rgba(0,0,0,.6);
-  }
-
-  .s-icon{
-    width:44px;
-    height:44px;
-    border-radius:12px;
-    display:grid;
-    place-items:center;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.06);
-    color:var(--brand, var(--gold));
-    transition:transform .25s, background .25s;
-  }
-
-  .s-card:hover .s-icon{
-    transform:scale(1.08);
-    background:rgba(255,255,255,0.07);
-  }
-
-  .s-icon svg{
-    width:22px;
-    height:22px;
-    fill:currentColor;
-  }
-
-  .s-meta{
-    min-width:0;
-  }
-
-  .s-meta strong{
-    display:block;
-    font-family:var(--display);
-    font-size:17px;
-    font-weight:700;
-    line-height:1.2;
-    color:var(--text);
-  }
-
-  .s-meta span{
-    display:block;
-    font-size:13px;
-    color:var(--dim);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    margin-top:2px;
-  }
-
-  @media(max-width:480px){
-    .s-card{
-      padding:12px 12px;
-      gap:10px;
-      border-radius:14px;
-    }
-    .s-icon{
-      width:36px;
-      height:36px;
-      border-radius:10px;
-    }
-    .s-icon svg{
-      width:18px;
-      height:18px;
-    }
-    .s-meta strong{
-      font-size:14px;
-    }
-    .s-meta span{
-      font-size:11.5px;
-    }
-  }
-
-  /* Direct Reach Out List */
-  .reach-box{
-    margin-top:20px;
-  }
-
-  .reach-title{
-    font-family:var(--display);
-    font-size:clamp(40px, 8vw, 88px);
-    font-weight:800;
-    line-height:.95;
-    letter-spacing:-.025em;
-    margin-bottom:28px;
-  }
-
-  .reach-title span{
-    color:var(--gold);
-  }
-
-  .reach-list{
-    border-top:1px solid var(--line);
-  }
-
-  .reach-item{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:20px 14px;
-    border-bottom:1px solid var(--line);
-    transition:background .2s, padding-left .2s;
-  }
-
-  .reach-item:hover{
-    background:var(--surface);
-    padding-left:22px;
-  }
-
-  .reach-left{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    min-width:0;
-  }
-
-  .reach-ico{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:var(--surface);
-    border:1px solid var(--line);
-    color:var(--brand, var(--gold));
-    flex-shrink:0;
-  }
-
-  .reach-ico svg{
-    width:20px;
-    height:20px;
-    fill:currentColor;
-  }
-
-  .reach-text strong{
-    display:block;
-    font-family:var(--display);
-    font-size:19px;
-    font-weight:700;
-    line-height:1.2;
-  }
-
-  .reach-text span{
-    display:block;
-    font-size:14px;
-    color:var(--dim);
-    margin-top:2px;
-    word-break:break-all;
-  }
-
-  .reach-actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    flex-shrink:0;
-  }
-
-  .copy-btn{
-    background:var(--bg);
-    color:var(--dim);
-    border:1px solid var(--line);
-    padding:7px 12px;
-    border-radius:8px;
-    font-family:var(--mono);
-    font-size:12px;
-    cursor:pointer;
-    transition:border-color .2s, color .2s;
-  }
-
-  .copy-btn:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-  }
-
-  .chev{
-    font-family:var(--mono);
-    font-size:20px;
-    color:var(--dim);
-    transition:transform .2s, color .2s;
-  }
-
-  .reach-item:hover .chev{
-    transform:translateX(5px);
-    color:var(--gold);
-  }
-
-  footer{
-    padding:30px var(--pad) 44px;
-    max-width:1280px;
-    margin:0 auto;
-    display:flex;
-    justify-content:space-between;
-    gap:10px 30px;
-    flex-wrap:wrap;
-    color:var(--dim);
-    font-size:14px;
-  }
-
-  .foot-band{
-    margin:0 var(--pad);
-  }
-
-  /* Scroll Reveal */
-  .reveal{
-    opacity:0;
-    transform:translateY(20px);
-    transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.2,1);
-  }
-
-  .reveal.in{
-    opacity:1;
-    transform:none;
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    html{
-      scroll-behavior:auto;
-    }
-    #name .ch, .status-dot{
-      animation:none;
-    }
-    .reveal{
-      opacity:1;
-      transform:none;
-    }
-  }
-</style>
 </head>
-
 <body>
-
-<a class="skip" href="#work">Skip to projects</a>
-
-<!-- NAV -->
-<nav aria-label="Main">
-  <a class="wordmark" href="#home" aria-label="Sharon Mathew, home">
-    SHARON<i>.</i>
-  </a>
-
-  <ul>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Connect</a></li>
-  </ul>
+<nav class="nav">
+ <strong style="letter-spacing:.12em">SHARON MATHEW</strong>
+ <div style="display:flex;gap:18px">
+  <a href="#work">Work</a><a href="#about">About</a><a href="#connect">Connect</a>
+ </div>
 </nav>
-
-<!-- HERO -->
-<header class="hero" id="home">
-
-  <div class="status-pill">
-    <span class="status-dot"></span>
-    <span>Available for freelance &amp; collabs</span>
-  </div>
-
-  <p class="greet">Hi, I'm</p>
-
-  <h1 id="name" aria-label="Sharon">
-    <span class="ch" style="--i:0" aria-hidden="true">S</span>
-    <span class="ch" style="--i:1" aria-hidden="true">h</span>
-    <span class="ch" style="--i:2" aria-hidden="true">a</span>
-    <span class="ch" style="--i:3" aria-hidden="true">r</span>
-    <span class="ch" style="--i:4" aria-hidden="true">o</span>
-    <span class="ch" style="--i:5" aria-hidden="true">n</span>
-  </h1>
-
-  <div class="hero-row">
-    <p class="lede">
-      <b>Sharon Mathew</b> is a developer and creator from Kerala who builds interactive websites, crafts visuals and edits high-energy video.
-    </p>
-
-    <div class="cta">
-      <a class="btn gold" href="#work">See my builds</a>
-      <a class="btn line" href="#contact">Reach out</a>
-    </div>
-  </div>
-
-  <p class="hint">
-    // Move your cursor or slide your finger across my name
-  </p>
-
-</header>
-
-<div class="kasavu" role="presentation"></div>
-
-<!-- WORK -->
-<section id="work" class="reveal">
-
-  <span class="eyebrow">// Selected Builds</span>
-  <div class="sec-head">
-    <h2>Things I've built</h2>
-    <p>Small interactive web projects, each one built to figure something out.</p>
-  </div>
-
-  <ul class="rows">
-
-    <li>
-      <a class="row" href="https://sharonmathew023-blip.github.io/valentine/" target="_blank" rel="noopener">
-        <div>
-          <h3>Valentine</h3>
-          <p>An interactive, Valentine-themed micro-site with playful DOM animations.</p>
-          <div class="tags">
-            <span class="kind">Interactive Page</span>
-          </div>
-        </div>
-
-        <div class="art" aria-hidden="true">
-          <svg viewBox="0 0 160 110" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M80 94C30 62 36 22 64 24c8 1 14 6 16 13 2-7 8-12 16-13 28-2 34 38-16 70z"
-              fill="#FF7A5C" fill-opacity=".16" stroke="#FF7A5C" stroke-width="2.5"/>
-            <path d="M122 18v12M116 24h12M34 78v8M30 82h8"
-              stroke="#F2B84B" stroke-width="2.5"/>
-          </svg>
-        </div>
-
-        <span class="go">Live Demo →</span>
-      </a>
-    </li>
-
-    <li>
-      <a class="row" href="https://github.com/sharonmathew023-blip/echora-messenger" target="_blank" rel="noopener">
-        <div>
-          <h3>Echora Messenger</h3>
-          <p>A sleek messenger interface built as a front-end layout and UI experiment.</p>
-          <div class="tags">
-            <span class="kind">UI Experiment</span>
-          </div>
-        </div>
-
-        <div class="art" aria-hidden="true">
-          <svg viewBox="0 0 160 1
+<section class="hero">
+ <div>
+  <h1 id="name"></h1>
+  <p class="hint">// Move your cursor or finger over my name</p>
+  <p class="muted" style="max-width:560px;margin:24px auto 0;font-size:18px;line-height:1.5">Student web developer, creative designer and video editor from Kerala, India. I build interactive tools and edit visuals that hit.</p>
+ </div>
+</section>
+<section id="work" class="section">
+ <div class="kicker">01 — Selected Work</div>
+ <h2 style="font-size:42px;line-height:.95;max-width:600px">Tools that solve real small problems.</h2>
+ <div class="work-grid">
+  <div class="row reveal"><div class="num">01</div><div><h3>Interactive Portfolio</h3><p>Fluid name animation, kasavu border, dark Kerala palette.</p><div style="margin-top:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div></div><a class="link" href="https://sharonmathew023-blip.github.io/SHARON2004/" target="_blank">Live →</a></div>
+  <div class="row reveal"><div class="num">02</div><div><h3>Echora Messenger Concept</h3><p>Chat UI with disappearing messages and vibe rooms.</p><div style="margin-top:8px"><span class="tag">UI/UX</span><span class="tag">Prototype</span></div></div><a class="link" href="#">Case study →</a></div>
+ </div>
+</section>
+<section id="about" class="section">
+ <div class="kicker">02 — About</div>
+ <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:32px">
+  <h2 style="font-size:clamp(28px,5vw,52px);line-height:.9">From Kottayam to the web — I like things that move, glow and feel local.</h2>
+  <div class="muted" style="line-height:1.7">Student dev + video editor. Tools: HTML/CSS/JS, Figma, Premiere Pro, After Effects. Love combining Kerala textures like kasavu gold with modern web tech.</div>
+ </div>
+</section>
+<section id="connect" class="section">
+ <div class="kicker">03 — Connect</div>
+ <h2 style="font-size:42px">Find me around.</h2>
+ <div class="social-grid">
+  <a class="s-card reveal" href="https://github.com/sharonmathew023-blip" target="_blank" style="--acc:#ffffff"><div class="left"><div class="dot" style="background:#fff;color:#000">GH</div><div><strong>GitHub</strong><div class="tiny">sharonmathew023-blip</div></div></div><span>→</span></a>
+  <a class="s-card reveal" href="https://www.instagram.com/kira_gfx_01/" target="_blank" style="--acc:#E1306C"><div class="left"><div class="dot" style="background:#E1306C;color:#fff">KG</div><div><strong>Kira GFX</strong><div class="tiny">Design page</div></div></div><span>→</span></a>
+  <a class="s-card reveal" href="https://www.instagram.com/psy_tranceholic/" target="_blank" style="--acc:#833AB4"><div class="left"><div class="dot" style="background:#833AB4;color:#fff">PT</div><div><strong>Psy Tranceholic</strong><div class="tiny">Main IG</div></div></div><span>→</span></a>
+  <a class="s-card reveal" href="https://www.youtube.com/@psy_tranceholic" target="_blank" style="--acc:#FF0000"><div class="left"><div class="dot" style="background:#FF0000;color:#fff">YT</div><div><strong>YouTube</strong><div class="tiny">@psy_tranceholic</div></div></div><span>→</span></a>
+  <a class="s-card reveal" href="https://t.me/iam_not_nigga" target="_blank" style="--acc:#229ED9"><div class="left"><div class="dot" style="background:#229ED9;color:#fff">TG</div><div><strong>Telegram</strong><div class="tiny">DM me</div></div></div><span>→</span></a>
+  <a class="s-card reveal" href="https://www.snapchat.com/add/sha_ron813?share_id=mlICT1Z1Pg8&locale=en-MM" target="_blank" style="--acc:#FFFC00;border-color:rgba(255,252,0,.35)"><div class="left"><div class="dot" style="background:#FFFC00;color:#000">SC</div><div><strong>Snapchat</strong><div class="tiny">sha_ron813</div></div></div><span>→</span></a>
+ </div>
+</section>
+<footer class="footer"><span>© <span id="year"></span> Sharon Mathew • Built in Kerala</span><span class="tiny">Kasavu × Code</span></footer>
+<script>
+const nameEl=document.getElementById('name');const text="SHARON MATHEW";text.split("").forEach(ch=>{const span=document.createElement('span');span.className='ch';span.textContent=ch===' ' ? '\u00A0' : ch;nameEl.appendChild(span);});const chars=[...document.querySelectorAll('#name .ch')];function handleMove(x,y){chars.forEach(c=>{const r=c.getBoundingClientRect();const cx=r.left+r.width/2,cy=r.top+r.height/2;const dx=x-cx,dy=y-cy;const dist=Math.hypot(dx,dy);const max=220;if(dist<max){const f=1-dist/max;c.style.transform=`translateY(${-f*18}px) scale(${1+f*0.35})`;c.style.color=`rgba(242,184,75,${0.6+f*0.4})`;}else{c.style.transform='';c.style.color='';}});}window.addEventListener('mousemove',e=>handleMove(e.clientX,e.clientY));window.addEventListener('touchmove',e=>{const t=e.touches[0];if(t)handleMove(t.clientX,t.clientY)},{passive:true});const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
