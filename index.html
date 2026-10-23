@@ -878,16 +878,3 @@
 </footer>
 
 <script>
-/* Hero name interaction */
-(function(){
-
-  var reduce = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
-  if (reduce) return;
-
-  var hero = document.getElementById('home');
-
-  var letters = Array.prototype.slice.call(
-    document.querySelectorAll('#name
