@@ -6,20 +6,21 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#070707">
 
-<title>Sharon Mathew — Creative Developer & Video Editor from Kerala</title>
+<title>Sharon Mathew — Creative Developer & Visual Editor from Kerala</title>
 <meta name="description" content="Sharon Mathew is a creative developer, video editor and designer from Kannur, Kerala. Building interactive web experiences and editing visuals with Alight Motion.">
 <meta name="author" content="Sharon Mathew">
-<meta name="keywords" content="Sharon Mathew, Web Developer Kerala, Video Editor Kannur, Creative Developer, Alight Motion, Graphic Designer">
+<meta name="keywords" content="Sharon Mathew, creative developer, video editor, graphic designer, Kannur, Kerala">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sharonmathew023-blip.github.io/SHARON2004/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sharonmathew023-blip.github.io/SHARON2004/">
-<meta property="og:title" content="Sharon Mathew — Creative Developer & Video Editor">
+<meta property="og:title" content="Sharon Mathew — Creative Developer & Visual Editor">
 <meta property="og:description" content="Creative developer and video editor from Kannur, Kerala. Building for web, editing visuals.">
 <meta property="og:image" content="https://sharonmathew023-blip.github.io/SHARON2004/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@psy_tranceholic">
+<meta name="twitter:site" content="@psy_tranceholic">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,6 +162,26 @@ main,nav,footer{position:relative;z-index:1}
 .arrow .i{transition:.35s}
 .card:hover .arrow .i,.s-card:hover .arrow .i{transform:translate(1px,-1px)}
 
+/* project numbers */
+.project-no{display:inline-block;margin-right:10px;color:var(--accent);font-size:11px;letter-spacing:.08em;vertical-align:middle;font-weight:500}
+
+/* capabilities */
+.cap-grid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cap{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--card);min-height:180px;transition:.35s}
+.cap:hover{background:var(--card-h);border-color:rgba(233,213,165,.35);transform:translateY(-2px)}
+.cap-num{font-size:11px;color:var(--accent);letter-spacing:.1em;margin-bottom:34px}
+.cap h3{font-size:20px;margin-bottom:9px;letter-spacing:-.02em}
+.cap p{color:var(--muted);font-size:14px;line-height:1.6;font-weight:300}
+
+/* contact */
+.contact-box{margin-top:52px;padding:34px;border:1px solid rgba(233,213,165,.2);border-radius:24px;background:radial-gradient(500px circle at 100% 0%,rgba(233,213,165,.08),transparent 65%),var(--card);display:flex;justify-content:space-between;align-items:center;gap:28px}
+.contact-copy{max-width:620px}
+.contact-copy h3{font-size:clamp(26px,4vw,42px);letter-spacing:-.04em;margin-bottom:10px}
+.contact-copy p{color:var(--muted);line-height:1.6;font-size:15px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.contact-actions .btn{white-space:nowrap}
+@media(max-width:700px){.cap-grid{grid-template-columns:1fr}.cap{min-height:auto}.contact-box{align-items:flex-start;flex-direction:column}.contact-actions{justify-content:flex-start}}
+
 /* about */
 .about{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start;margin-top:52px}
 .about-big{font-size:clamp(30px,3.8vw,46px);line-height:1.05;letter-spacing:-.03em;font-weight:500}
@@ -253,7 +274,7 @@ main,nav,footer{position:relative;z-index:1}
 
   <section class="hero">
     <div>
-      <div class="badge"><span class="dot"></span>Available for freelance</div>
+      <div class="badge"><span class="dot"></span>Open to freelance</div>
       <h1 class="name"><span class="sharon">Sharon</span><span class="mathew">Mathew</span></h1>
       <div class="hero-bottom">
         <p class="hero-desc">Creative developer and video editor from Kannur, Kerala. I build interactive web things and edit visuals that feel <em>minimal, but alive.</em></p>
@@ -278,14 +299,24 @@ main,nav,footer{position:relative;z-index:1}
     <div class="grid">
       <a class="card reveal" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer">
         <div class="ico"><svg class="i"><use href="#i-heart"/></svg></div>
-        <div><h3>Valentine’s Day</h3><p>An interactive Valentine’s experience with motion, code and a little chaos.</p></div>
+        <div><h3><span class="project-no">01</span>Valentine’s Day</h3><p>An interactive Valentine’s experience with motion, code and a little chaos.</p></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
       <a class="card reveal" href="https://github.com/sharonmathew023-blip/echora-messenger" target="_blank" rel="noopener noreferrer">
         <div class="ico"><svg class="i"><use href="#i-chat"/></svg></div>
-        <div><h3>Echora Messenger</h3><p>An experimental messenger concept focused on clean UI and interaction.</p></div>
+        <div><h3><span class="project-no">02</span>Echora Messenger</h3><p>An experimental messenger concept focused on clean UI and interaction.</p></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker reveal">What I do</div>
+    <h2 class="h2 reveal">A few things I like to <i>make better.</i></h2>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">01 / WEB</div><h3>Web experiences</h3><p>Clean, responsive pages with HTML, CSS and JavaScript, with motion used where it actually helps.</p></article>
+      <article class="cap reveal"><div class="cap-num">02 / VIDEO</div><h3>Video editing</h3><p>Short-form edits, motion, pacing and visual effects using Alight Motion, with colour work in Lightroom.</p></article>
+      <article class="cap reveal"><div class="cap-num">03 / VISUALS</div><h3>Graphic design</h3><p>Posters, social graphics and visual experiments focused on composition, contrast and a clean finish.</p></article>
     </div>
   </section>
 
@@ -337,6 +368,14 @@ main,nav,footer{position:relative;z-index:1}
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
     </div>
+    <div class="contact-box reveal">
+      <div class="contact-copy"><h3>Have a project in mind?</h3><p>For freelance work, collaborations or just a good idea, email me or message me on WhatsApp.</p></div>
+      <div class="contact-actions">
+        <a class="btn primary" href="mailto:sharonmathew023@gmail.com">Email me <svg class="i"><use href="#i-mail"/></svg></a>
+        <a class="btn ghost" href="https://wa.me/919778296916" target="_blank" rel="noopener noreferrer">WhatsApp <svg class="i"><use href="#i-chat"/></svg></a>
+      </div>
+    </div>
+
   </section>
 </main>
 
