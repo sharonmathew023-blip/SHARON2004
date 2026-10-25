@@ -151,6 +151,9 @@ main,nav,footer{position:relative;z-index:1}
 /* work */
 .grid{margin-top:52px;display:grid;gap:14px}
 .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:22px;transition:border-color .4s,background .4s,transform .4s}
+.project-preview{grid-column:1/-1;overflow:hidden;border:1px solid var(--line);border-radius:16px;aspect-ratio:1.45/1;background:var(--surface)}
+.project-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
+.card:hover .project-preview img{transform:scale(1.018)}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(233,213,165,.09),transparent 60%);opacity:0;transition:.4s;pointer-events:none}
 .card:hover{background:var(--card-h);border-color:rgba(233,213,165,.35);transform:translateY(-2px)}
 .card:hover::before{opacity:1}
@@ -298,6 +301,7 @@ main,nav,footer{position:relative;z-index:1}
     <h2 class="h2 reveal">Things I’ve built, edited and <i>experimented</i> with.</h2>
     <div class="grid">
       <a class="card reveal" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="project-preview"><img src="assets/valentine-preview.webp" alt="Preview of Sharon's interactive Valentine’s Day page" loading="lazy"></div>
         <div class="ico"><svg class="i"><use href="#i-heart"/></svg></div>
         <div><h3><span class="project-no">01</span>Valentine’s Day</h3><p>An interactive Valentine’s experience with motion, code and a little chaos.</p></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
