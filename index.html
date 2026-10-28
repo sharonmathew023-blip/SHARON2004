@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sharonmathew023-blip.github.io/SHARON2004/">
 <meta property="og:title" content="Sharon Mathew — Creative Developer & Visual Editor">
-<meta property="og:description" content="Creative developer and video editor from Kannur, Kerala. Building for web, editing visuals.">
+<meta property="og:description" content="I build interactive websites, edit videos, and create visuals. Based in Kannur, Kerala.">
 <meta property="og:image" content="https://sharonmathew023-blip.github.io/SHARON2004/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@psy_tranceholic">
@@ -24,7 +24,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
 
 <script type="application/ld+json">
 {
@@ -40,7 +41,7 @@
     "https://www.instagram.com/_kira.gfx/",
     "https://www.youtube.com/@psy_tranceholic",
     "https://www.snapchat.com/add/sha_ron813",
-    "https://t.me/iam_not_nigga"
+    "https://t.me/iam_gigachad"
   ]
 }
 </script>
@@ -54,8 +55,8 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
   --card:#0e0e0e;
   --card-h:#141414;
   --text:#EDE9E3;
-  --muted:#9a968f;
-  --dim:#55524d;
+  --muted:#b4b0a8;
+  --dim:#8e8980;
   --line:rgba(255,255,255,.09);
   --accent:#E9D5A5;
   --gold:linear-gradient(120deg,#f6e7bd 0%,#E9D5A5 40%,#b99a58 100%);
@@ -91,7 +92,7 @@ main,nav,footer{position:relative;z-index:1}
 
 /* light theme */
 :root[data-theme="light"]{
-  --bg:#f6f3ee;--card:#ffffff;--card-h:#fbf9f5;--text:#14130f;--muted:#6b675f;--dim:#a39e93;
+  --bg:#f6f3ee;--card:#ffffff;--card-h:#fbf9f5;--text:#14130f;--muted:#5f5a52;--dim:#777166;
   --line:rgba(20,19,15,.12);--accent:#8a6a1f;
   --gold:linear-gradient(120deg,#b8923a 0%,#8a6a1f 60%,#6e5210 100%);
   --nav:rgba(246,243,238,.75);--tint:rgba(20,19,15,.04);--stroke:rgba(20,19,15,.4);
@@ -115,8 +116,9 @@ main,nav,footer{position:relative;z-index:1}
 /* hero (pure CSS animation, never depends on JS) */
 .hero{min-height:88vh;display:flex;align-items:center;padding:10vh 5% 8vh;max-width:1400px;margin:auto}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:100px;font-size:12px;color:var(--muted);background:var(--tint);margin-bottom:36px}
-.dot{width:7px;height:7px;border-radius:50%;background:#7CE3A1;box-shadow:0 0 0 0 rgba(124,227,161,.6);animation:pulse 2.2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(124,227,161,0)}100%{box-shadow:0 0 0 0 rgba(124,227,161,0)}}
+.dot{width:7px;height:7px;border-radius:50%;background:#7CE3A1;position:relative}
+.dot::after{content:"";position:absolute;inset:-4px;border:1px solid rgba(124,227,161,.45);border-radius:50%;animation:pulse 2.2s ease-out infinite;transform:scale(.6);opacity:0}
+@keyframes pulse{30%{opacity:.65}100%{transform:scale(1.8);opacity:0}}
 .name{font-size:clamp(68px,15vw,210px);line-height:.84;letter-spacing:-.07em;font-weight:800;text-transform:uppercase}
 .name span{display:block;opacity:0;transform:translateY(30px);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
 .name .sharon{background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -234,6 +236,17 @@ main,nav,footer{position:relative;z-index:1}
   .js .reveal{opacity:1;transform:none}
 }
 
+/* concise project case notes */
+.case-studies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.case-study{padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.case-label{display:block;color:var(--accent);font-size:11px;letter-spacing:.1em;margin-bottom:18px}
+.case-study h3{font-size:20px;letter-spacing:-.02em;margin-bottom:16px}
+.case-study p{font-size:14px;line-height:1.65;color:var(--muted);margin-top:8px}
+.case-study p strong{color:var(--text);font-weight:600}
+.case-study a{display:inline-block;margin-top:18px;color:var(--accent);font-size:13px}
+.case-study a:hover{text-decoration:underline}
+@media(max-width:700px){.case-studies{grid-template-columns:1fr}.case-study{padding:20px}}
+
 /* Instagram feed embed */
 .instagram-feed{margin-top:36px;padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--card);overflow:hidden}
 .instagram-feed-head{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
@@ -289,7 +302,7 @@ main,nav,footer{position:relative;z-index:1}
       <div class="badge"><span class="dot"></span>Open to freelance</div>
       <h1 class="name"><span class="sharon">Sharon</span><span class="mathew">Mathew</span></h1>
       <div class="hero-bottom">
-        <p class="hero-desc">Creative developer and video editor from Kannur, Kerala. I build interactive web things and edit visuals that feel <em>minimal, but alive.</em></p>
+        <p class="hero-desc">I build interactive websites, edit videos, and create visuals. Based in <em>Kannur, Kerala.</em></p>
         <div class="cta">
           <a class="btn primary" href="#work">See my work <svg class="i"><use href="#i-arrow"/></svg></a>
           <a class="btn ghost" href="#connect">Get in touch</a>
@@ -315,11 +328,24 @@ main,nav,footer{position:relative;z-index:1}
         <div><h3><span class="project-no">01</span>Valentine’s Day</h3><p>An interactive Valentine’s experience with motion, code and a little chaos.</p></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
-      <a class="card reveal" href="https://github.com/sharonmathew023-blip/echora-messenger" target="_blank" rel="noopener noreferrer">
-        <div class="ico"><svg class="i"><use href="#i-chat"/></svg></div>
-        <div><h3><span class="project-no">02</span>Echora Messenger</h3><p>An experimental messenger concept focused on clean UI and interaction.</p></div>
-        <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
-      </a>
+    </div>
+    <div class="case-studies reveal" aria-label="Project case studies">
+      <div class="case-study">
+        <span class="case-label">CASE NOTE / 01</span>
+        <h3>Valentine’s Day · An interactive page</h3>
+        <p><strong>Goal:</strong> Turn a simple Valentine’s message into a small web experience.</p>
+        <p><strong>Approach:</strong> Build a custom page with motion and a playful visual direction, keeping the interaction at the center.</p>
+        <p><strong>Focus:</strong> A personal, expressive experience rather than a generic greeting template.</p>
+        <a href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer">View project ↗</a>
+      </div>
+      <div class="case-study">
+        <span class="case-label">CASE NOTE / 02</span>
+        <h3>Personal portfolio · A creative home online</h3>
+        <p><strong>Goal:</strong> Bring web work, video edits and visual design together in one place.</p>
+        <p><strong>Approach:</strong> Use a responsive, dark-first layout, custom typography, lightweight inline icons and clear paths to projects and socials.</p>
+        <p><strong>Focus:</strong> Keep the presentation minimal while letting the work and visual personality lead.</p>
+        <a href="https://github.com/sharonmathew023-blip/SHARON2004" target="_blank" rel="noopener noreferrer">View source ↗</a>
+      </div>
     </div>
     <div class="instagram-feed reveal" aria-label="Instagram posts and reels">
       <div class="instagram-feed-head">
@@ -388,7 +414,7 @@ main,nav,footer{position:relative;z-index:1}
         <div class="s-left"><div class="s-icon"><svg class="i"><use href="#i-snap"/></svg></div><div><div class="s-name">Snapchat</div><div class="s-handle">sha_ron813</div></div></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
-      <a class="s-card reveal" href="https://t.me/iam_not_nigga" target="_blank" rel="noopener noreferrer">
+      <a class="s-card reveal" href="https://t.me/iam_gigachad" target="_blank" rel="noopener noreferrer">
         <div class="s-left"><div class="s-icon"><svg class="i"><use href="#i-telegram"/></svg></div><div><div class="s-name">Telegram</div><div class="s-handle">Message me</div></div></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
       </a>
