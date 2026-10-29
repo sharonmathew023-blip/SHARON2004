@@ -153,10 +153,7 @@ main,nav,footer{position:relative;z-index:1}
 /* work */
 .grid{margin-top:52px;display:grid;gap:14px}
 .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:22px;transition:border-color .4s,background .4s,transform .4s}
-.project-preview{grid-column:1/-1;overflow:hidden;border:1px solid var(--line);border-radius:16px;aspect-ratio:1.45/1;background:var(--surface)}
-.project-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
-.card:hover .project-preview img{transform:scale(1.018)}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(233,213,165,.09),transparent 60%);opacity:0;transition:.4s;pointer-events:none}
+.card:hover .card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(233,213,165,.09),transparent 60%);opacity:0;transition:.4s;pointer-events:none}
 .card:hover{background:var(--card-h);border-color:rgba(233,213,165,.35);transform:translateY(-2px)}
 .card:hover::before{opacity:1}
 .ico{width:56px;height:56px;display:grid;place-items:center;border:1px solid var(--line);border-radius:16px;font-size:24px;color:var(--accent);background:rgba(233,213,165,.04)}
@@ -291,15 +288,18 @@ main,nav,footer{position:relative;z-index:1}
   .cta .btn { flex-basis: 100%; }
 }
 
-/* Draggable project preview ribbon */
-.works{overflow:hidden;padding:34px 0 42px;cursor:grab;touch-action:pan-y;user-select:none}
-.works:active{cursor:grabbing}
-.works-track{display:flex;gap:16px;width:max-content;will-change:transform}
-.work-card{display:block;min-width:clamp(220px,30vw,360px);height:clamp(280px,36vw,390px);border:1px solid var(--line);border-radius:20px;background:var(--card);flex-shrink:0;overflow:hidden}
-.work-card img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
-@media(max-width:700px){.works{padding:24px 0 32px}.work-card{min-width:220px;height:300px;border-radius:18px}}
-@media(prefers-reduced-motion:reduce){.works-track{will-change:auto}}
-\n</style>
+
+
+
+
+
+@media(max-width:700px){}
+@media(prefers-reduced-motion:reduce){}
+
+.name .mathew{-webkit-text-stroke:1.6px #EDE9E3}
+:root[data-theme="light"] .name .mathew{color:var(--accent);-webkit-text-fill-color:var(--accent);-webkit-text-stroke:0}
+:root[data-theme="light"] .hero:hover .mathew{color:var(--text);-webkit-text-fill-color:var(--text);-webkit-text-stroke:0}
+</style>
 </head>
 <body>
 
@@ -362,21 +362,11 @@ main,nav,footer{position:relative;z-index:1}
     </div>
   </div>
 
-
-  <!-- Project preview ribbon: uses the real preview asset already in the portfolio. -->
-  <div class="works" id="works" aria-label="Project preview carousel">
-    <div class="works-track" id="worksTrack">
-      <a class="work-card" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open Valentine's Day project"><img src="assets/valentine-preview.webp" alt="Preview of the Valentine's Day interactive project" draggable="false" loading="lazy"></a>
-      <a class="work-card" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"><img src="assets/valentine-preview.webp" alt="" draggable="false" loading="lazy"></a>
-    </div>
-  </div>
-
   <section id="work" class="section">
     <div class="kicker reveal">Selected work</div>
     <h2 class="h2 reveal">Things I’ve built, edited and <i>experimented</i> with.</h2>
     <div class="grid">
       <a class="card reveal" href="https://sharonmathew023-blip.github.io/valentine/index.html" target="_blank" rel="noopener noreferrer">
-        <div class="project-preview"><img src="assets/valentine-preview.webp" alt="Preview of Sharon's interactive Valentine’s Day page" loading="lazy"></div>
         <div class="ico"><svg class="i"><use href="#i-heart"/></svg></div>
         <div><h3><span class="project-no">01</span>Valentine’s Day</h3><p>An interactive Valentine’s experience with motion, code and a little chaos.</p></div>
         <div class="arrow"><svg class="i"><use href="#i-arrow"/></svg></div>
@@ -550,46 +540,5 @@ main,nav,footer{position:relative;z-index:1}
 </script>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
-<script>
-(function(){
-  var viewport=document.getElementById('works');
-  var track=document.getElementById('worksTrack');
-  if(!viewport||!track) return;
-  var x=0, speed=0.45, dragging=false, startX=0, startTranslate=0, moved=false, raf=0;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function loop(){
-    if(!dragging && !reduce && speed!==0){
-      x-=speed;
-      var half=track.scrollWidth/2;
-      if(half>0 && Math.abs(x)>=half) x=0;
-      track.style.transform='translate3d('+x+'px,0,0)';
-    }
-    raf=requestAnimationFrame(loop);
-  }
-  viewport.addEventListener('pointerdown',function(e){
-    if(e.pointerType==='mouse' && e.button!==0) return;
-    dragging=true; moved=false; startX=e.clientX; startTranslate=x; speed=0;
-    viewport.setPointerCapture(e.pointerId);
-  });
-  viewport.addEventListener('pointermove',function(e){
-    if(!dragging) return;
-    var delta=e.clientX-startX;
-    if(Math.abs(delta)>4) moved=true;
-    x=startTranslate+delta;
-    var half=track.scrollWidth/2;
-    if(half>0){ if(x>0) x-=half; if(x<=-half) x+=half; }
-    track.style.transform='translate3d('+x+'px,0,0)';
-  });
-  function release(){dragging=false; speed=0.45;}
-  viewport.addEventListener('pointerup',release);
-  viewport.addEventListener('pointercancel',release);
-  viewport.addEventListener('lostpointercapture',release);
-  viewport.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
-  viewport.addEventListener('mouseenter',function(){if(!dragging)speed=0;});
-  viewport.addEventListener('mouseleave',function(){if(!dragging)speed=0.45;});
-  document.addEventListener('visibilitychange',function(){if(document.hidden) cancelAnimationFrame(raf); else loop();});
-  loop();
-})();
-</script>
-\n</body>
+</body>
 </html>
