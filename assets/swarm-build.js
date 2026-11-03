@@ -22,15 +22,11 @@
   targets.forEach(el=>el.classList.add('swarm-assemble'));
   document.querySelectorAll('.project').forEach(el=>el.classList.add('swarm-card'));
   imgs.forEach(el=>el.classList.add('swarm-image'));
-  const layer=document.createElement('div');layer.id='swarm-live-cursors';layer.setAttribute('aria-hidden','true');
-  const svg='<svg viewBox="0 0 18 22"><path d="M2 1 16 13 9.5 13.5 6.5 20Z" fill="currentColor" stroke="#050505" stroke-width="1.2" stroke-linejoin="round"/></svg>';
-  const cursors=['LAYOUT','VISUALS','DETAILS'].map((n,i)=>{const c=document.createElement('div');c.className='swarm-live-cursor';c.innerHTML=svg+'<b>'+n+'</b>';layer.append(c);return c;});document.body.append(layer);
-  let last=-1,raf=0;
+  let raf=0;
   function update(){raf=0;const vh=innerHeight;let focus=null,focusIndex=0;
     targets.forEach((el,i)=>{const r=el.getBoundingClientRect();const p=Math.max(0,Math.min(1,(vh*.82-r.top)/(Math.max(120,r.height+vh*.35))));el.style.setProperty('--build',p.toFixed(3));if(p>=.02&&p<.99)el.classList.remove('swarm-finished');if(p>=.99)el.classList.add('swarm-finished');if(!focus&&r.bottom>vh*.15&&r.top<vh*.85){focus=el;focusIndex=i;}});
     document.querySelectorAll('.project').forEach(el=>{const r=el.getBoundingClientRect();const p=Math.max(0,Math.min(1,(vh*.85-r.top)/(Math.max(140,r.height+vh*.25))));el.style.setProperty('--build',p.toFixed(3));});
     imgs.forEach(el=>{const r=el.getBoundingClientRect();const p=Math.max(0,Math.min(1,(vh*.85-r.top)/(Math.max(100,r.height+vh*.2))));el.style.setProperty('--build',p.toFixed(3));});
-    if(focus){const r=focus.getBoundingClientRect();cursors.forEach((c,i)=>{const x=Math.max(8,Math.min(innerWidth-90,r.left+r.width*[.22,.68,.46][i]));const y=Math.max(8,Math.min(vh-32,r.top+r.height*[.28,.52,.78][i]));c.style.transform=`translate(${x}px,${y}px)`;if(focusIndex!==last&&i===focusIndex%3){c.classList.add('is-clicking');setTimeout(()=>c.classList.remove('is-clicking'),260);}});last=focusIndex;}
   }
   function onScroll(){if(!raf)raf=requestAnimationFrame(update)}
   addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
