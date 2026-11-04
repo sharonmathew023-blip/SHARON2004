@@ -48,3 +48,33 @@
     lastTrigger?.focus();
   });
 })();
+
+
+/* Load the third-party Instagram feed only when its section is approaching view. */
+(() => {
+  const profiles = document.getElementById('profiles');
+  const feed = profiles?.querySelector('.elfsight-app-98e8718e-55d3-4a64-b2e2-5cb889d6aeec');
+  if (!profiles || !feed) return;
+
+  let loaded = false;
+  const loadFeed = () => {
+    if (loaded) return;
+    loaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        observer.disconnect();
+        loadFeed();
+      }
+    }, { rootMargin: '320px 0px' });
+    observer.observe(profiles);
+  } else {
+    loadFeed();
+  }
+})();
