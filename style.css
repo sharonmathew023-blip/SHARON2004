@@ -164,3 +164,17 @@ body{font-size:14px}
   .links>a{font-size:8px}
   .theme-toggle{width:30px;height:30px;min-width:30px}
 }
+
+
+/* Film status indicator: soft lime glow with a slow breathing pulse. */
+.film-status i{
+  flex:0 0 7px;
+  box-shadow:0 0 5px color-mix(in srgb,var(--lime) 75%,transparent),0 0 12px color-mix(in srgb,var(--lime) 45%,transparent);
+  animation:status-pulse 2.8s ease-in-out infinite;
+  transform-origin:center;
+}
+@keyframes status-pulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 5px color-mix(in srgb,var(--lime) 75%,transparent),0 0 12px color-mix(in srgb,var(--lime) 45%,transparent)}
+  50%{transform:scale(1.55);box-shadow:0 0 8px color-mix(in srgb,var(--lime) 95%,transparent),0 0 20px color-mix(in srgb,var(--lime) 65%,transparent)}
+}
+@media(prefers-reduced-motion:reduce){.film-status i{animation:none}}
