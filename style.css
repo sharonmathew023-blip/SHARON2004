@@ -110,3 +110,57 @@ section.section{padding:clamp(64px,8vw,104px) 0}.label{margin:0 0 20px;color:var
   .links>a{font-size:7px}
   .nav>.logo{font-size:18px}
 }
+
+
+/* Compact typography pass: keep the visual hierarchy without oversized type. */
+body{font-size:14px}
+.nav{min-height:70px}
+.logo{font-size:22px}
+.section .label{font-size:9px;margin-bottom:16px}
+.heading{font-size:clamp(28px,4.5vw,50px);line-height:1.02}
+.name{font-size:clamp(48px,10vw,112px)}
+.eyebrow{font-size:10px;margin-bottom:20px}
+.intro{font-size:clamp(14px,1.5vw,17px);line-height:1.7}
+.btn{min-height:44px;padding:11px 19px;font-size:13px}
+.cap h3{font-size:18px}
+.cap p{font-size:13px;line-height:1.75}
+.project h3{font-size:18px}
+.ighead p{font-size:11px}
+.profile-card strong{font-size:15px}
+.profile-card>span:last-child{font-size:10px}
+.film-title{font-size:clamp(36px,5.4vw,64px)}
+.film-copy h3{font-size:clamp(19px,2.6vw,27px)}
+.film-copy p{font-size:13px;line-height:1.8}
+.about-big{font-size:clamp(27px,3.6vw,42px)}
+.about p{font-size:13.5px;line-height:1.8}
+.chip{font-size:10px;padding:7px 10px}
+.education-item h3{font-size:16px}
+.education-item p{font-size:12px;line-height:1.7}
+.learning-strip h3{font-size:clamp(18px,2.3vw,24px)}
+.learning-strip p{font-size:10px}
+.social-name{font-size:13px}
+.contact h3{font-size:clamp(23px,3.4vw,34px)}
+.contact p{font-size:13px}
+.footer{font-size:10px}
+.scroll{font-size:9px}
+@media(max-width:760px){
+  .links{gap:16px}
+  .links>a{font-size:10px;letter-spacing:.04em}
+  .links>a[href="#profiles"],.links>a[href="#education"]{display:none}
+  .theme-toggle{width:34px;height:34px}
+}
+@media(max-width:430px){
+  .links{gap:14px}
+  .links>a{font-size:9px;letter-spacing:0}
+  .theme-toggle{width:32px;height:32px;min-width:32px}
+  .name{font-size:clamp(48px,13vw,64px)}
+  .intro{font-size:14px}
+  .btn{font-size:12px}
+}
+@media(max-width:360px){
+  .nav{padding-inline:4%;gap:8px}
+  .logo{font-size:17px}
+  .links{gap:10px}
+  .links>a{font-size:8px}
+  .theme-toggle{width:30px;height:30px;min-width:30px}
+}
