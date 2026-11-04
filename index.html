@@ -73,6 +73,20 @@ section.section{padding:clamp(78px,10vw,130px) 0}
 body[data-theme="light"] .cap-grid .cap,body[data-theme="light"] .work-grid .project{background:linear-gradient(145deg,rgba(255,255,255,.72),rgba(255,255,255,.38));border-color:rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 34px rgba(30,40,10,.12)}
 body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-grid .project:hover{border-color:color-mix(in srgb,var(--lime) 60%,transparent)}
 @media(max-width:700px){.cap-grid .cap,.work-grid .project{-webkit-backdrop-filter:blur(12px) saturate(140%);backdrop-filter:blur(12px) saturate(140%)}}
+
+/* Columns: real gaps, comfortable padding, more readable glass */
+.cap-grid{gap:20px!important;border:0!important}
+.work-grid{gap:28px!important}
+.socials{gap:16px!important}
+.cap-grid .cap,.cap-grid .cap:first-child,.cap-grid .cap:last-child{padding:30px 28px!important;border-radius:20px!important}
+.work-grid .project-body{padding:24px 26px 28px!important}
+.socials .social{padding:20px 22px!important}
+.cap-grid .cap,.work-grid .project,.socials .social{background:linear-gradient(145deg,color-mix(in srgb,var(--ink) 11%,transparent),color-mix(in srgb,var(--ink) 4%,transparent)),color-mix(in srgb,var(--bg) 58%,transparent)!important;-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--ink) 16%,transparent),0 12px 40px rgba(0,0,0,.35)}
+.socials .social:hover{border-color:color-mix(in srgb,var(--lime) 55%,transparent)}
+.cap p,.project p{color:color-mix(in srgb,var(--ink) 82%,transparent)!important}
+.cap h3,.project h3{color:var(--ink)}
+body[data-theme="light"] .cap-grid .cap,body[data-theme="light"] .work-grid .project,body[data-theme="light"] .socials .social{background:linear-gradient(145deg,rgba(255,255,255,.8),rgba(255,255,255,.5))!important;border-color:rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 34px rgba(30,40,10,.12)}
+@media(max-width:700px){.cap-grid .cap,.cap-grid .cap:first-child,.cap-grid .cap:last-child{padding:26px 24px!important}.work-grid .project-body{padding:22px 22px 26px!important}.cap-grid{gap:16px!important}.work-grid{gap:20px!important}}
 </style>
 <style id="loader-styles">
 #site-loader{position:fixed;inset:0;z-index:9999;background:#000000;display:grid;place-items:center;transition:opacity .55s ease,visibility .55s ease}
@@ -138,14 +152,14 @@ body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-gri
     var geos=[new T.IcosahedronGeometry(1,0),new T.OctahedronGeometry(1.1,0),new T.BoxGeometry(1.5,1.5,1.5),
               new T.TetrahedronGeometry(1.3,0),new T.TorusGeometry(1,0.34,8,16),new T.DodecahedronGeometry(1,0)];
     var edges=geos.map(function(g){return new T.EdgesGeometry(g,25)});
-    var shapes=[],N=18,i;
+    var shapes=[],N=14,i;
     for(i=0;i<N;i++){
       var m=new T.LineSegments(edges[i%edges.length],lineMat);
-      var side=i%2?1:-1,bx=side*(3+Math.random()*11),by=-3+Math.random()*9,z=-9-i*(112/N)-Math.random()*4;
+      var side=i%2?1:-1,bx=side*(3+Math.random()*11),by=-3+Math.random()*9,z=-10-i*(56/N)-Math.random()*5;
       m.position.set(bx,by,z);
       m.scale.setScalar(0.8+Math.random()*2);
       m.rotation.set(Math.random()*3,Math.random()*3,0);
-      m.userData={bx:bx,by:by,rx:(Math.random()-0.5)*0.5,ry:(Math.random()-0.5)*0.7,ph:Math.random()*6.28};
+      m.userData={bx:bx,by:by,rx:(Math.random()-0.5)*0.25,ry:(Math.random()-0.5)*0.32,ph:Math.random()*6.28};
       scene.add(m);shapes.push(m);
     }
 
@@ -161,7 +175,7 @@ body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-gri
       w=window.innerWidth;h=window.innerHeight;
       renderer.setSize(w,h,false);
       camera.aspect=w/h;camera.updateProjectionMatrix();
-      xs=clamp((w/h)/1.6,0.35,1);
+      xs=clamp((w/h)/1.6,0.6,1);
       for(var k=0;k<shapes.length;k++)shapes[k].position.x=shapes[k].userData.bx*xs;
     }
     resize();
@@ -171,9 +185,9 @@ body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-gri
 
     function draw(){
       var dt=Math.min(clock.getDelta(),0.05),t=clock.elapsedTime;
-      var max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
-      var p=clamp((window.scrollY||0)/max,0,1);
-      camZ+=((6-p*110)-camZ)*(reduce?1:0.07);
+      
+      
+      camZ=6;
       cx+=(mx*1.6-cx)*0.05;cy+=(-my*0.9-cy)*0.05;
       camera.position.set(cx,cy,camZ);
       camera.lookAt(cx*0.4,cy*0.4-1.2,camZ-30);
@@ -181,7 +195,7 @@ body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-gri
         for(var k=0;k<shapes.length;k++){
           var s=shapes[k],u=s.userData;
           s.rotation.x+=u.rx*dt;s.rotation.y+=u.ry*dt;
-          s.position.y=u.by+Math.sin(t*0.6+u.ph)*0.35;
+          s.position.y=u.by+Math.sin(t*0.35+u.ph)*0.5;s.position.x=u.bx*xs+Math.sin(t*0.2+u.ph)*0.6;
         }
       }
       renderer.render(scene,camera);
@@ -192,7 +206,7 @@ body[data-theme="light"] .cap-grid .cap:hover,body[data-theme="light"] .work-gri
     }
     if(reduce){
       var q=false,once=function(){if(!q){q=true;requestAnimationFrame(function(){q=false;draw()})}};
-      window.addEventListener('scroll',once,{passive:true});
+      
       window.addEventListener('resize',function(){resize();once()});
       draw();
     }else{
