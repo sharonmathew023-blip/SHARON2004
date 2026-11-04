@@ -216,3 +216,6 @@ body[data-theme="light"] .intro,body[data-theme="light"] .cap p,body[data-theme=
 .project-dialog-description{color:var(--muted);line-height:1.75;margin:18px 0}
 .project-dialog-action{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:99px;background:var(--lime);color:#080a05;font-weight:800}
 @media(prefers-reduced-motion:reduce){.hero .wrap{animation:none}}
+
+/* Keep project descriptions inside the tap-to-open preview only. */
+.work-grid .project .project-body > p{display:none!important}
