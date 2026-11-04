@@ -65,3 +65,48 @@ section.section{padding:clamp(64px,8vw,104px) 0}.label{margin:0 0 20px;color:var
 .social-youtube .brand-icon svg{fill:#fff!important;stroke:none!important}
 .social-snapchat .brand-icon{background:#fffc00!important;color:#000!important;border:0!important}
 .social-snapchat .brand-icon svg{fill:#000!important;stroke:none!important}
+
+
+/* Site-wide typography refinement: smaller, calmer type at every breakpoint. */
+.heading{font-size:clamp(29px,4.4vw,48px)}
+.name{font-size:clamp(48px,10vw,112px)}
+.eyebrow{font-size:10px;letter-spacing:.15em}
+.intro{max-width:540px;margin-top:28px;font-size:clamp(14px,1.45vw,17px);line-height:1.7}
+.label{font-size:9px;margin-bottom:16px}
+.cap h3{font-size:19px}
+.cap p,.film-copy p{font-size:13px}
+.film-title{font-size:clamp(38px,5.3vw,66px)}
+.film-copy h3{font-size:clamp(20px,2.5vw,28px)}
+.about p{font-size:14px;line-height:1.8}
+.about-big{font-size:clamp(28px,3.5vw,42px)}
+.education-item h3{font-size:16px}
+.education-item p{font-size:12px}
+.learning-strip h3{font-size:clamp(18px,2.2vw,25px)}
+.contact h3{font-size:clamp(23px,3.3vw,34px)}
+.contact p{font-size:13px}
+.social-name{font-size:13px}
+
+/* Mobile navigation uses two compact rows instead of squeezing five links. */
+@media(max-width:760px){
+  .nav{min-height:0;flex-wrap:wrap;row-gap:10px;padding:12px 5% 10px}
+  .nav>.logo{font-size:20px}
+  .links{width:100%;justify-content:space-between;gap:8px;overflow:visible}
+  .links>a{font-size:9px;letter-spacing:.04em;white-space:nowrap}
+  .theme-toggle{width:32px;height:32px;min-width:32px;font-size:16px}
+  .name{font-size:clamp(48px,12vw,82px)}
+  .intro{font-size:14px}
+}
+@media(max-width:430px){
+  .nav{padding-inline:4%}
+  .links{gap:5px}
+  .links>a{font-size:8px;letter-spacing:0}
+  .theme-toggle{width:30px;height:30px;min-width:30px}
+  .heading{font-size:clamp(27px,8vw,34px)}
+  .name{font-size:clamp(46px,12.5vw,62px)}
+  .intro{font-size:13px}
+}
+@media(max-width:360px){
+  .links{gap:4px}
+  .links>a{font-size:7px}
+  .nav>.logo{font-size:18px}
+}
