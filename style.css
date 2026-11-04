@@ -58,3 +58,10 @@ section.section{padding:clamp(64px,8vw,104px) 0}.label{margin:0 0 20px;color:var
 #profiles .profile-card{min-height:108px;padding:17px 19px;gap:8px}
 #profiles .profile-card strong{display:block;max-width:100%;font-size:clamp(14px,1.45vw,17px);line-height:1.25;letter-spacing:-.025em;overflow-wrap:anywhere}
 #profiles .profile-card>span:last-child{font-size:11px;line-height:1.5}
+
+
+/* Explicit brand colours: avoid grid-position styling collisions. */
+.social-youtube .brand-icon{background:#ff0033!important;color:#fff!important;border:0!important}
+.social-youtube .brand-icon svg{fill:#fff!important;stroke:none!important}
+.social-snapchat .brand-icon{background:#fffc00!important;color:#000!important;border:0!important}
+.social-snapchat .brand-icon svg{fill:#000!important;stroke:none!important}
