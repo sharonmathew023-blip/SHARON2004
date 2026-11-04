@@ -11,10 +11,13 @@
 
   document.querySelectorAll('[data-project-preview]').forEach(card => {
     card.setAttribute('aria-haspopup', 'dialog');
+    card.setAttribute('aria-controls', 'project-dialog');
+    card.setAttribute('aria-expanded', 'false');
     card.addEventListener('click', event => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       lastTrigger = card;
+      card.setAttribute('aria-expanded', 'true');
       title.textContent = card.querySelector('h3')?.textContent.trim() || 'Project preview';
       description.textContent = card.querySelector('.project-body p')?.textContent.trim() || '';
       action.href = card.href;
@@ -25,7 +28,7 @@
       if (image) {
         const clone = document.createElement('img');
         clone.src = image.currentSrc || image.src;
-        clone.alt = image.alt || title.textContent + ' preview';
+        clone.alt = image.alt || `${title.textContent} preview`;
         preview.append(clone);
       } else if (source) {
         const word = source.querySelector('.word');
@@ -40,5 +43,8 @@
   dialog.addEventListener('click', event => {
     if (event.target === dialog) dialog.close();
   });
-  dialog.addEventListener('close', () => lastTrigger?.focus());
+  dialog.addEventListener('close', () => {
+    lastTrigger?.setAttribute('aria-expanded', 'false');
+    lastTrigger?.focus();
+  });
 })();
