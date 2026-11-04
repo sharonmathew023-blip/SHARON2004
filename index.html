@@ -47,13 +47,33 @@ section.section{padding:clamp(78px,10vw,130px) 0}
 .depth{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;perspective:900px}
 .d-layer{position:absolute;left:0;right:0;top:-25%;bottom:-25%;will-change:transform}
 .d-grid{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:84px 84px;opacity:.38;-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 45%,#000 25%,transparent 78%);mask-image:radial-gradient(ellipse 70% 55% at 50% 45%,#000 25%,transparent 78%)}
-.d-rings i{position:absolute;left:66%;top:44%;border:1px solid color-mix(in srgb,var(--lime) 38%,transparent);border-radius:50%;transform:translate(-50%,-50%) rotateX(68deg) rotateZ(var(--rz,0deg))}
+.d-rings i{position:absolute;left:66%;top:44%;border:1px solid color-mix(in srgb,var(--lime) 38%,transparent);border-radius:50%;transform:translate(-50%,-50%) rotateX(calc(68deg + var(--my,0deg))) rotateY(var(--mx,0deg)) rotateZ(var(--rz,0deg))}
 .d-rings i:nth-child(1){width:340px;height:340px}
-.d-rings i:nth-child(2){width:540px;height:540px;border-style:dashed;opacity:.7;transform:translate(-50%,-50%) rotateX(68deg) rotateZ(calc(var(--rz,0deg) * -1.4))}
+.d-rings i:nth-child(2){width:540px;height:540px;border-style:dashed;opacity:.7;transform:translate(-50%,-50%) rotateX(calc(68deg + var(--my,0deg))) rotateY(var(--mx,0deg)) rotateZ(calc(var(--rz,0deg) * -1.4))}
 .d-rings i:nth-child(3){width:760px;height:760px;opacity:.45}
 .d-dots b{position:absolute;left:var(--x);top:var(--y);width:var(--s,5px);height:var(--s,5px);border-radius:50%;background:var(--lime);opacity:var(--o,.5);box-shadow:0 0 14px var(--lime)}
 .hero .wrap{will-change:translate,opacity}
 @media(max-width:700px){.d-rings i:nth-child(1){width:220px;height:220px}.d-rings i:nth-child(2){width:360px;height:360px}.d-rings i:nth-child(3){display:none}.d-rings i{left:70%}}
+
+/* Skills cube + card tilt */
+.hero .wrap{position:relative;z-index:1}
+.cube-stage{--cs:240px;position:absolute;z-index:0;right:max(5%,calc((100% - 1180px)/2 + 20px));top:50%;width:var(--cs);height:var(--cs);margin-top:calc(var(--cs) / -2);perspective:1100px;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+.cube-stage.drag{cursor:grabbing}
+.cube{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,-24deg)) rotateY(var(--ry,32deg))}
+.cube span{position:absolute;inset:0;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--lime) 75%,transparent);background:color-mix(in srgb,var(--lime) 5%,transparent);font:600 12px var(--mono);letter-spacing:.34em;text-indent:.34em;color:var(--lime);box-shadow:inset 0 0 44px color-mix(in srgb,var(--lime) 12%,transparent),0 0 18px color-mix(in srgb,var(--lime) 14%,transparent)}
+.cube span:nth-child(1){transform:translateZ(calc(var(--cs) / 2))}
+.cube span:nth-child(2){transform:rotateY(90deg) translateZ(calc(var(--cs) / 2))}
+.cube span:nth-child(3){transform:rotateY(180deg) translateZ(calc(var(--cs) / 2))}
+.cube span:nth-child(4){transform:rotateY(-90deg) translateZ(calc(var(--cs) / 2))}
+.cube span:nth-child(5){transform:rotateX(90deg) translateZ(calc(var(--cs) / 2))}
+.cube span:nth-child(6){transform:rotateX(-90deg) translateZ(calc(var(--cs) / 2))}
+.cube .core{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:radial-gradient(circle,var(--lime),transparent 70%);opacity:.85}
+.tilt{position:relative;will-change:transform;transition:transform .3s ease-out,border-color .2s}
+.tilt.on{transition:transform .06s linear,border-color .2s}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),color-mix(in srgb,var(--lime) 16%,transparent),transparent 55%)}
+.tilt.on::after{opacity:1}
+@media(max-width:900px){.cube-stage{--cs:170px;top:22%;right:4%}.cube span{font-size:10px;letter-spacing:.26em;text-indent:.26em}}
+@media(max-width:700px){.cube-stage{--cs:120px;top:14px;margin-top:0;right:14px;opacity:.55}.cube span{font-size:8px;letter-spacing:.2em;text-indent:.2em}}
 </style>
 <style id="loader-styles">
 #site-loader{position:fixed;inset:0;z-index:9999;background:#000000;display:grid;place-items:center;transition:opacity .55s ease,visibility .55s ease}
@@ -68,7 +88,7 @@ section.section{padding:clamp(78px,10vw,130px) 0}
 <body><div id="site-loader" role="status" aria-label="Loading portfolio"><div><div class="loader-mark">SHARON<span>.</span></div><div class="loader-track"></div></div></div>
 <div class="depth" aria-hidden="true"><div class="d-layer d-grid" data-depth="0.07"></div><div class="d-layer d-rings" data-depth="0.16"><i></i><i></i><i></i></div><div class="d-layer d-dots" data-depth="0.34"><b style="--x:8%;--y:22%"></b><b style="--x:19%;--y:64%;--s:4px;--o:.35"></b><b style="--x:31%;--y:38%;--s:7px;--o:.55"></b><b style="--x:47%;--y:80%;--s:4px"></b><b style="--x:58%;--y:18%;--s:6px;--o:.4"></b><b style="--x:73%;--y:58%;--s:8px;--o:.6"></b><b style="--x:86%;--y:30%;--s:4px;--o:.35"></b><b style="--x:92%;--y:76%;--s:6px"></b><b style="--x:14%;--y:90%;--s:5px;--o:.4"></b><b style="--x:64%;--y:94%;--s:4px;--o:.35"></b></div></div>
 <nav class="nav"><a class="logo" href="#top" aria-label="Sharon Mathew home">SHARON<span>.</span></a><div class="links"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☼</button><a href="#work">Work</a><a href="#about">About</a><a href="#connect">Contact</a></div></nav>
-<main id="top"><section class="hero"><div class="wrap"><p class="eyebrow">VIDEO EDITING / GRAPHIC DESIGN</p><h1 class="name"><span class="sharon">SHARON</span><br><span class="outline">MATHEW</span><span class="dot">.</span></h1><p class="intro">I’m <strong>Sharon</strong>, a video editor and graphic designer from Kannur. I chase rhythm in edits, mood in colour, and a good composition in everything.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="#connect">Let's connect</a></div></div><span class="scroll">SCROLL TO EXPLORE</span></section>
+<main id="top"><section class="hero"><div class="wrap"><p class="eyebrow">VIDEO EDITING / GRAPHIC DESIGN</p><h1 class="name"><span class="sharon">SHARON</span><br><span class="outline">MATHEW</span><span class="dot">.</span></h1><p class="intro">I’m <strong>Sharon</strong>, a video editor and graphic designer from Kannur. I chase rhythm in edits, mood in colour, and a good composition in everything.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="#connect">Let's connect</a></div></div><div class="cube-stage" aria-hidden="true"><div class="cube"><span>VIDEO</span><span>DESIGN</span><span>WEB</span><span>MOTION</span><span>COLOUR</span><span>STORY</span><i class="core"></i></div></div><span class="scroll">SCROLL TO EXPLORE</span></section>
 <section class="section" id="work"><div class="wrap"><div class="label">Selected projects</div><h2 class="heading">Frames, pixels,<br><em>and a little obsession.</em></h2><div class="work-grid">
 <a class="project reveal" href="https://sharonmathew023-blip.github.io/valentine/" target="_blank" rel="noopener"><div class="preview"><img src="assets/valentine-preview.webp" alt="Preview of the interactive Valentine's Day project" loading="lazy"></div><div class="project-body"><div class="project-top"><h3>Valentine's Day Page</h3><span class="case-note">WEB / 01</span></div><p>A small interactive page made for Valentine’s Day, built to feel playful instead of polished for polish’s sake.</p><span class="project-link">VIEW PROJECT</span></div></a>
 <a class="project reveal" href="https://github.com/sharonmathew023-blip/SHARON2004" target="_blank" rel="noopener"><div class="preview"><div class="word">SHARON<span style="color:var(--blue)">.</span></div></div><div class="project-body"><div class="project-top"><h3>Personal Portfolio</h3><span class="case-note">WEB / 02</span></div><p>An evolving home for the things I make, break, and learn while creating.</p><span class="project-link">VIEW SOURCE</span></div></a>
@@ -116,6 +136,64 @@ section.section{padding:clamp(78px,10vw,130px) 0}
   window.addEventListener('resize',req);
   window.addEventListener('load',req);
   frame();
+})();
+</script>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Draggable skills cube: idle spin, drag to throw it, scroll nudges it.
+  var stage=document.querySelector('.cube-stage'),cube=stage&&stage.querySelector('.cube');
+  if(stage&&cube){
+    var rx=-24,ry=32,vx=0.28,vy=0,drag=false,lx=0,ly=0,vis=true,raf=0,sy0=window.scrollY||0;
+    var paint=function(){cube.style.setProperty('--rx',rx.toFixed(2)+'deg');cube.style.setProperty('--ry',ry.toFixed(2)+'deg')};
+    var tick=function(){
+      raf=0;
+      if(!drag){ry+=vx;rx+=vy;vy*=0.94;vx+=(0.28-vx)*0.03;rx+=(-24-rx)*0.02}
+      var sy=window.scrollY||0;ry+=(sy-sy0)*0.18;sy0=sy;
+      rx=Math.max(-75,Math.min(75,rx));
+      paint();
+      if(vis&&!reduce)raf=requestAnimationFrame(tick);
+    };
+    stage.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;ly=e.clientY;stage.classList.add('drag');try{stage.setPointerCapture(e.pointerId)}catch(_){}});
+    stage.addEventListener('pointermove',function(e){
+      if(!drag)return;
+      var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;
+      ry+=dx*0.6;rx=Math.max(-75,Math.min(75,rx-dy*0.6));vx=dx*0.6;vy=-dy*0.6;
+      if(reduce)paint();
+    });
+    var end=function(){drag=false;stage.classList.remove('drag')};
+    stage.addEventListener('pointerup',end);
+    stage.addEventListener('pointercancel',end);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis&&!raf&&!reduce)raf=requestAnimationFrame(tick)}).observe(stage);
+    }
+    paint();
+    if(!reduce)raf=requestAnimationFrame(tick);
+  }
+
+  if(reduce||!fine)return;
+
+  // 3D tilt + glare on cards (mouse devices only).
+  [].slice.call(document.querySelectorAll('.project,.cap')).forEach(function(el){
+    el.classList.add('tilt');
+    el.addEventListener('pointermove',function(e){
+      var r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+      el.classList.add('on');
+      el.style.setProperty('--gx',(px*100).toFixed(1)+'%');
+      el.style.setProperty('--gy',(py*100).toFixed(1)+'%');
+      el.style.transform='perspective(900px) rotateX('+((0.5-py)*8).toFixed(2)+'deg) rotateY('+((px-0.5)*10).toFixed(2)+'deg) translateZ(0)';
+    });
+    el.addEventListener('pointerleave',function(){el.classList.remove('on');el.style.transform=''});
+  });
+
+  // Background rings lean toward the cursor.
+  var rings=document.querySelector('.d-rings'),q=false,mx=0,my=0;
+  if(rings)window.addEventListener('pointermove',function(e){
+    mx=(e.clientX/window.innerWidth-0.5)*14;my=(e.clientY/window.innerHeight-0.5)*-10;
+    if(!q){q=true;requestAnimationFrame(function(){q=false;rings.style.setProperty('--mx',mx.toFixed(1)+'deg');rings.style.setProperty('--my',my.toFixed(1)+'deg')})}
+  },{passive:true});
 })();
 </script>
 </body></html>
