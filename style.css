@@ -237,3 +237,67 @@ body[data-theme="light"] .contact{background:linear-gradient(125deg,rgba(255,255
 body[data-theme="light"] .project-dialog{background:rgba(250,252,246,.94)}
 @media(max-width:760px){.nav{backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}.project-body,.cap,.profile-card,.social,.contact{backdrop-filter:blur(11px) saturate(130%);-webkit-backdrop-filter:blur(11px) saturate(130%)}}
 @media(prefers-reduced-transparency:reduce){.nav,.project-body,.cap,.profile-card,.social,.contact,.project-dialog{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+
+/* Ambient texture behind the glass surfaces. Keep these layers inside the
+   body's stacking context so they sit above the black page background. */
+body{isolation:isolate}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(600px circle at 15% 20%,rgba(190,255,0,.22),transparent 60%),
+    radial-gradient(500px circle at 85% 40%,rgba(190,255,0,.14),transparent 60%),
+    radial-gradient(700px circle at 40% 90%,rgba(120,160,0,.18),transparent 60%),
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0 / 48px 48px;
+}
+
+/* Fine grain adds texture without covering the content. */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.14;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Real glass treatment: target the existing portfolio surfaces directly.
+   A standalone .glass utility is also available for future components. */
+.glass,.nav,.project-body,.cap,.profile-card,.social,.contact,.project-dialog{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 32px rgba(0,0,0,.5);
+}
+body[data-theme="light"] .glass,
+body[data-theme="light"] .nav,
+body[data-theme="light"] .project-body,
+body[data-theme="light"] .cap,
+body[data-theme="light"] .profile-card,
+body[data-theme="light"] .social,
+body[data-theme="light"] .contact,
+body[data-theme="light"] .project-dialog{
+  background:rgba(255,255,255,.48);
+  border-color:rgba(70,90,35,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 8px 32px rgba(38,48,20,.12);
+}
+@media(max-width:760px){
+  .glass,.nav,.project-body,.cap,.profile-card,.social,.contact,.project-dialog{
+    backdrop-filter:blur(14px) saturate(150%);
+    -webkit-backdrop-filter:blur(14px) saturate(150%);
+  }
+}
+@media(prefers-reduced-transparency:reduce){
+  .glass,.nav,.project-body,.cap,.profile-card,.social,.contact,.project-dialog{
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+}
