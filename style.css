@@ -178,3 +178,22 @@ body{font-size:14px}
   50%{transform:scale(1.55);box-shadow:0 0 8px color-mix(in srgb,var(--lime) 95%,transparent),0 0 20px color-mix(in srgb,var(--lime) 65%,transparent)}
 }
 @media(prefers-reduced-motion:reduce){.film-status i{animation:none}}
+
+/* taste layer: flat ground, one radius, plain type, quiet hover motion */
+:root{--r:14px;--ease:cubic-bezier(.2,.7,.2,1)}
+.depth{display:none}
+.heading,.about-big,.film-title{letter-spacing:-.04em;line-height:1.05}
+.name{letter-spacing:-.06em;line-height:.9}
+.name .outline{-webkit-text-stroke:0;-webkit-text-fill-color:var(--lime);color:var(--lime)}
+.eyebrow{letter-spacing:.06em;font-weight:600;font-size:14px}
+.intro{color:var(--ink);opacity:.82}
+.project,.cap,.profile-card,.social,.contact,.igbox,.learning-strip{border-radius:var(--r)}
+.btn{border-radius:var(--r);transition:transform .18s var(--ease),border-color .18s,background .18s}
+.btn:hover{transform:translateY(-1px)}.btn:active{transform:scale(.98)}
+.project,.cap,.profile-card,.social{transition:transform .22s var(--ease),border-color .18s}
+.project:hover,.cap:hover,.profile-card:hover,.social:hover{transform:translateY(-2px);border-color:var(--lime)}
+.preview img{transition:transform .5s var(--ease)}.project:hover .preview img{transform:scale(1.025)}
+.links>a{position:relative;padding-bottom:4px}
+.links>a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.links>a:hover:after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
