@@ -484,3 +484,50 @@ body .project-dialog,body .chip,body .btn{
 @media(max-width:760px){
   .hero .wrap{display:block}
 }
+
+
+/* Hero reset: open layout, compact on mobile, no enclosing card. */
+.hero{
+  min-height:75vh;
+  height:auto;
+  display:flex;
+  align-items:center;
+  padding:clamp(48px,8vh,88px) 0;
+  background:transparent;
+}
+.hero .wrap{
+  display:block;
+  width:min(1180px,88%);
+  padding:0;
+  margin-inline:auto;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+body[data-theme="light"] .hero .wrap{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+}
+.hero .eyebrow{margin-bottom:18px}
+.hero .intro{max-width:650px;margin-top:26px}
+.hero .role-rotator{
+  display:inline-block;
+  color:#CCFF00;
+  font-size:1.12em;
+  font-weight:800;
+  border:0;
+  transition:opacity .5s ease,transform .5s ease;
+}
+.hero .role-rotator.fade-out{opacity:0;transform:translateY(10px)}
+@media(max-width:760px){
+  .hero{min-height:0;height:auto;padding:50px 0 60px;align-items:flex-start}
+  .hero .wrap{width:90%;padding:0}
+  .hero .intro{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .role-rotator{transition:none}
+}

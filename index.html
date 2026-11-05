@@ -26,7 +26,7 @@
 <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
 <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg>
 </button></div></nav>
-<main id="main-content" tabindex="-1"><section class="hero" id="top"><div class="wrap"><p class="eyebrow">Web developer, video editor and designer in Kerala</p><h1 class="name"><span class="sharon">SHARON</span><br><span class="outline">MATHEW</span><span class="dot">.</span></h1><p class="intro">I’m <strong>Sharon</strong>, a creative technologist from Kerala. I bring together <span class="role">web, design, video, and storytelling</span> to turn ideas into things people can see, use, and feel.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="#connect">Let's connect</a></div></div></section>
+<main id="main-content" tabindex="-1"><section class="hero" id="top"><div class="wrap"><p class="eyebrow">Web developer, video editor and designer in Kerala</p><h1 class="name"><span class="sharon">SHARON</span><br><span class="outline">MATHEW</span><span class="dot">.</span></h1><p class="intro">I’m Sharon Mathew, shaping ideas into visuals, digital experiences and stories. I work across <span class="role role-rotator" id="role-rotator" aria-live="polite">Creative Developer</span>.<br>Welcome to my little corner of the internet.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="#connect">Let's connect</a></div></div></section>
 <section class="section" id="work"><div class="wrap"><div class="label">Selected projects</div><h2 class="heading">Projects I built.</h2><div class="work-grid">
 <a class="project reveal" data-project-preview href="https://sharonmathew023-blip.github.io/valentine/" target="_blank" rel="noopener"><div class="preview"><img src="assets/valentine-preview.webp" alt="Preview of the interactive Valentine's Day project" loading="lazy"></div><div class="project-body"><div class="project-top"><h3>Valentine's Day Page</h3><span class="case-note">WEB / 01</span></div><p>A playful Valentine’s Day experience built around a simple idea: make the interaction feel personal, light-hearted, and worth sharing.</p><span class="project-link">VIEW PROJECT</span></div></a>
 <a class="project reveal" data-project-preview href="https://github.com/sharonmathew023-blip/SHARON2004" target="_blank" rel="noopener"><div class="preview"><div class="word">SHARON<span style="color:var(--lime)">.</span></div></div><div class="project-body"><div class="project-top"><h3>Personal Portfolio</h3><span class="case-note">WEB / 02</span></div><p>A personal portfolio bringing my web experiments, visual work, and creative practice together in one place. Built and refined as a hands-on web project.</p><span class="project-link">VIEW SOURCE</span></div></a>
@@ -74,6 +74,20 @@ themeToggle.addEventListener('click', () => {
   try { localStorage.setItem('portfolio-theme', document.body.dataset.theme); } catch (error) {}
   syncTheme();
 });
+
+const rotatingRole = document.getElementById('role-rotator');
+if (rotatingRole) {
+  const roles = ['Creative Developer', 'Visual Designer', 'Video Editor', 'Digital Creator'];
+  let roleIndex = 0;
+  setInterval(() => {
+    rotatingRole.classList.add('fade-out');
+    setTimeout(() => {
+      roleIndex = (roleIndex + 1) % roles.length;
+      rotatingRole.textContent = roles[roleIndex];
+      rotatingRole.classList.remove('fade-out');
+    }, 500);
+  }, 2400);
+}
 </script>
 
 
