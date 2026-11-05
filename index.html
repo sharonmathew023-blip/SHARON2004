@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#000000"><meta name="description" content="Sharon Mathew is a student and creative from Kerala, India, building web projects, editing videos and developing graphic design skills.">
+<meta name="theme-color" content="#0A0A0A"><meta name="description" content="Sharon Mathew is a student and creative from Kerala, India, building web projects, editing videos and developing graphic design skills.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sharon Mathew">
 <meta property="og:title" content="Sharon Mathew — Creative Technologist & Visual Designer">
@@ -22,14 +22,17 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a><div class="depth" aria-hidden="true"><div class="d-layer d-grid"></div><div class="d-layer d-rings"><i></i></div><div class="d-layer d-dots"><b style="--x:19%;--y:64%;--s:4px;--o:.2"></b><b style="--x:86%;--y:30%;--s:4px;--o:.18"></b></div></div>
-<nav class="nav" aria-label="Main navigation"><a class="logo" href="#top" aria-label="Sharon Mathew home">SHARON<span>.</span></a><div class="links"><a href="#top">Home</a><a href="#about">About</a><a href="#work">Works</a><a href="#connect">Contact</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button></div></nav>
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="#top" aria-label="Sharon Mathew home">SHARON<span>.</span></a><div class="links"><a href="#top">Home</a><a href="#about">About</a><a href="#work">Works</a><a href="#connect">Contact</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+<svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+<svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg>
+</button></div></nav>
 <main id="main-content" tabindex="-1"><section class="hero" id="top"><div class="wrap"><p class="eyebrow">Web developer, video editor and designer in Kerala</p><h1 class="name"><span class="sharon">SHARON</span><br><span class="outline">MATHEW</span><span class="dot">.</span></h1><p class="intro">I’m <strong>Sharon</strong>, a creative technologist from Kerala. I bring together <span class="role">web, design, video, and storytelling</span> to turn ideas into things people can see, use, and feel.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="#connect">Let's connect</a></div></div></section>
 <section class="section" id="work"><div class="wrap"><div class="label">Selected projects</div><h2 class="heading">Projects I built.</h2><div class="work-grid">
 <a class="project reveal" data-project-preview href="https://sharonmathew023-blip.github.io/valentine/" target="_blank" rel="noopener"><div class="preview"><img src="assets/valentine-preview.webp" alt="Preview of the interactive Valentine's Day project" loading="lazy"></div><div class="project-body"><div class="project-top"><h3>Valentine's Day Page</h3><span class="case-note">WEB / 01</span></div><p>A playful Valentine’s Day experience built around a simple idea: make the interaction feel personal, light-hearted, and worth sharing.</p><span class="project-link">VIEW PROJECT</span></div></a>
 <a class="project reveal" data-project-preview href="https://github.com/sharonmathew023-blip/SHARON2004" target="_blank" rel="noopener"><div class="preview"><div class="word">SHARON<span style="color:var(--lime)">.</span></div></div><div class="project-body"><div class="project-top"><h3>Personal Portfolio</h3><span class="case-note">WEB / 02</span></div><p>A personal portfolio bringing my web experiments, visual work, and creative practice together in one place. Built and refined as a hands-on web project.</p><span class="project-link">VIEW SOURCE</span></div></a>
 </div><dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-description"><div class="project-dialog-inner"><div class="project-dialog-head"><h2 id="project-dialog-title">Project preview</h2><button class="project-dialog-close" type="button" aria-label="Close preview">×</button></div><div class="project-dialog-preview" id="project-dialog-preview"></div><p class="project-dialog-description" id="project-dialog-description"></p><a class="project-dialog-action" id="project-dialog-action" href="#" target="_blank" rel="noopener">OPEN PROJECT</a></div></dialog></div></section>
 
-<section class="section" id="capabilities"><div class="wrap"><div class="label">What I do</div><h2 class="heading">What I do.</h2><div class="cap-grid">
+<section class="section" id="capabilities"><div class="wrap"><div class="label">Capabilities</div><h2 class="heading">What I do.</h2><div class="cap-grid">
 <article class="cap reveal"><small>01 / WEB</small><h3>Web development</h3><p>Building responsive websites and interactive experiences with HTML, CSS and JavaScript, learning by shipping small projects.</p></article>
 <article class="cap reveal"><small>02 / VIDEO</small><h3>Video editing</h3><p>Editing videos with a focus on rhythm, pacing, transitions and colour. I use Alight Motion for editing and Lightroom for colour work.</p></article>
 <article class="cap reveal"><small>03 / DESIGN</small><h3>Graphic design</h3><p>Creating digital visuals with an eye for composition and typography. I'm currently developing my Photoshop skills through my diploma training.</p></article>
@@ -62,7 +65,6 @@ try {
 } catch (error) {}
 function syncTheme() {
   const light = document.body.dataset.theme === 'light';
-  themeToggle.textContent = light ? '☾' : '☼';
   themeToggle.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
   themeToggle.setAttribute('aria-pressed', String(light));
 }
