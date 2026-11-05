@@ -301,3 +301,166 @@ body[data-theme="light"] .project-dialog{
     -webkit-backdrop-filter:none;
   }
 }
+
+
+/* 2026 refinement: soft charcoal palette, restrained glass and compact hero. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0A0A;
+  --panel:#141414;
+  --ink:#E5E5E5;
+  --muted:#A3A3A3;
+  --lime:#CCFF00;
+  --line:#2A2A2A;
+}
+body[data-theme="light"]{
+  color-scheme:light;
+  --bg:#F4F5F0;
+  --panel:#FFFFFF;
+  --ink:#252720;
+  --muted:#62665C;
+  --lime:#557900;
+  --line:#D4DACB;
+}
+html,body{background-color:var(--bg)}
+.depth{background:var(--bg)}
+.depth:before{
+  background:
+    radial-gradient(ellipse at 18% 24%,rgba(204,255,0,.055),transparent 34%),
+    radial-gradient(ellipse at 82% 38%,rgba(125,170,190,.035),transparent 30%);
+}
+.d-rings,.d-dots{display:none!important}
+body:after{opacity:.035}
+body::before{
+  background:
+    radial-gradient(600px circle at 15% 20%,rgba(204,255,0,.075),transparent 60%),
+    radial-gradient(500px circle at 85% 40%,rgba(204,255,0,.045),transparent 60%),
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px) 0 0 / 64px 64px;
+}
+body[data-theme="light"]::before{
+  background:
+    radial-gradient(600px circle at 15% 20%,rgba(85,121,0,.055),transparent 60%),
+    radial-gradient(500px circle at 85% 40%,rgba(85,121,0,.035),transparent 60%);
+}
+body[data-theme="light"] .depth:before{opacity:.45}
+
+/* Keep the hero compact and give its content one shared alignment edge. */
+.hero{
+  min-height:0;
+  padding:clamp(48px,7vh,82px) 0 clamp(56px,8vh,92px);
+  align-items:center;
+}
+.hero .wrap{
+  width:min(1000px,88%);
+  padding:clamp(22px,4vw,42px);
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:22px;
+  background:rgba(255,255,255,.025);
+  backdrop-filter:blur(10px) saturate(115%);
+  -webkit-backdrop-filter:blur(10px) saturate(115%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
+}
+body[data-theme="light"] .hero .wrap{
+  border-color:rgba(70,90,35,.12);
+  background:rgba(255,255,255,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+.hero:before{display:none}
+.hero .eyebrow{margin-bottom:16px}
+.hero .name{
+  max-width:100%;
+  font-size:clamp(48px,8.5vw,100px);
+  line-height:.92;
+  overflow-wrap:normal;
+}
+.hero .intro{margin-top:20px}
+.hero .actions{margin-top:22px}
+@media(max-width:760px){
+  .hero{padding:38px 0 52px;min-height:0}
+  .hero .wrap{width:90%;padding:22px 18px;border-radius:18px}
+  .hero .name{font-size:clamp(44px,11.8vw,70px)}
+  .hero .intro{margin-top:17px}
+}
+@media(max-width:430px){
+  .hero .wrap{padding:19px 15px}
+  .hero .name{font-size:clamp(40px,11.4vw,58px)}
+}
+
+/* Instagram embeds are content, not a glass card. Let them sit on the page. */
+#profiles .igbox{
+  margin-top:30px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+#profiles .ighead{
+  display:block;
+  margin-bottom:22px;
+}
+#profiles .ighead .label{margin-bottom:8px}
+#profiles .snapwidget-feed{
+  margin:0 0 26px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+#profiles .snapwidget-feed>.label{margin-bottom:12px}
+#profiles .snapwidget-widget{display:block;max-width:100%}
+#profiles .profile-fallback{margin-top:20px}
+
+/* Clearer theme control with a crisp, animated sun/moon glyph. */
+.theme-toggle{
+  position:relative;
+  overflow:hidden;
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--panel);
+  color:var(--ink);
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  transition:background-color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .3s ease;
+}
+.theme-toggle:hover{transform:translateY(-1px);border-color:var(--lime);box-shadow:0 0 0 3px color-mix(in srgb,var(--lime) 12%,transparent)}
+.theme-toggle:active{transform:scale(.94)}
+.theme-icon{
+  position:absolute;
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:opacity .25s ease,transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.sun-icon{opacity:1;transform:rotate(0) scale(1)}
+.moon-icon{opacity:0;transform:rotate(-55deg) scale(.55)}
+body[data-theme="light"] .sun-icon{opacity:0;transform:rotate(55deg) scale(.55)}
+body[data-theme="light"] .moon-icon{opacity:1;transform:rotate(0) scale(1)}
+@media(max-width:760px){.theme-toggle{width:36px;height:36px;border-radius:12px}.theme-icon{width:17px;height:17px}}
+
+/* Smooth theme changes without animating layout or movement. */
+body,body .nav,body .theme-toggle,body .hero .wrap,body .project,
+body .project-body,body .cap,body .profile-card,body .social,
+body .contact,body .learning-strip,body .film-layout,body .education-item,
+body .project-dialog,body .chip,body .btn{
+  transition-property:background-color,color,border-color,box-shadow,fill,stroke;
+  transition-duration:.32s;
+  transition-timing-function:ease;
+}
+@media(prefers-reduced-motion:reduce){
+  body,body *{transition-duration:0s!important}
+}
+
+/* Keep the profile/Instagram block visually flat, including hover states. */
+#profiles .igbox:hover{box-shadow:none;transform:none;border-color:transparent}
