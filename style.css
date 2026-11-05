@@ -464,3 +464,23 @@ body .project-dialog,body .chip,body .btn{
 
 /* Keep the profile/Instagram block visually flat, including hover states. */
 #profiles .igbox:hover{box-shadow:none;transform:none;border-color:transparent}
+
+
+/* Desktop hero composition: name and supporting copy share one row. */
+@media(min-width:761px){
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    grid-template-rows:auto auto auto;
+    align-items:center;
+    column-gap:clamp(24px,5vw,64px);
+    row-gap:14px;
+  }
+  .hero .eyebrow{grid-column:2;grid-row:1;margin:0}
+  .hero .name{grid-column:1;grid-row:1 / span 3;align-self:center}
+  .hero .intro{grid-column:2;grid-row:2;margin:0}
+  .hero .actions{grid-column:2;grid-row:3;margin-top:8px}
+}
+@media(max-width:760px){
+  .hero .wrap{display:block}
+}
