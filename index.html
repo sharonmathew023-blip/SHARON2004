@@ -5,18 +5,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0a0f">
-<meta name="description" content="Sharon Mathew is a creative student from Kannur, Kerala. Explore web projects, video edits, graphic design and a short film in development.">
+<meta name="description" content="Explore the portfolio of Sharon Mathew, a video editor and graphic designer from Kannur, Kerala, featuring creative edits, visual design and web projects.">
+<meta name="author" content="Sharon Mathew">
+<meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sharon Mathew">
-<meta property="og:title" content="Sharon Mathew | Creative Portfolio">
+<meta property="og:title" content="Sharon Mathew | Video Editor & Graphic Designer">
+<meta property="og:locale" content="en_IN">
 <meta property="og:description" content="Web projects, video editing, graphic design and storytelling by Sharon Mathew.">
 <meta property="og:url" content="https://sharonmathew023-blip.github.io/SHARON2004/">
 <meta property="og:image" content="https://sharonmathew023-blip.github.io/SHARON2004/assets/social-preview.png">
 <meta property="og:image:alt" content="Sharon Mathew creative portfolio preview">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sharon Mathew | Video Editor & Graphic Designer">
+<meta name="twitter:description" content="Video editing, graphic design, web projects and creative storytelling by Sharon Mathew from Kerala.">
+<meta name="twitter:image" content="https://sharonmathew023-blip.github.io/SHARON2004/assets/social-preview.png">
+<meta name="twitter:image:alt" content="Sharon Mathew creative portfolio preview">
 <link rel="canonical" href="https://sharonmathew023-blip.github.io/SHARON2004/">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<title>Sharon Mathew | Creative Portfolio</title>
+<title>Sharon Mathew | Video Editor &amp; Graphic Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -138,7 +145,7 @@ const loader=document.getElementById('loader');
 const loaderPercent=document.getElementById('loader-percent');
 const loaderProgress=document.getElementById('loader-progress');
 let showLoader=false;
-try{showLoader=!sessionStorage.getItem('portfolio-loader-seen');if(showLoader)sessionStorage.setItem('portfolio-loader-seen','1')}catch(e){showLoader=true}
+try{showLoader=localStorage.getItem('portfolio-loader-seen')!=='1';if(showLoader)localStorage.setItem('portfolio-loader-seen','1')}catch(e){showLoader=false}
 if(!showLoader||window.matchMedia('(prefers-reduced-motion: reduce)').matches){loader.classList.add('done')}
 else{
  let started=0;
