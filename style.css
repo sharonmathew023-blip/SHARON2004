@@ -687,3 +687,7 @@ body small{font-size:1.02em}
  .hero .intro{font-size:13px!important}
 }
 @media(prefers-reduced-motion:reduce){.hero .name .sharon,.hero .name .outline,.hero .name .dot{animation:none!important}}
+
+
+/* Performance: disable the full-viewport SVG turbulence grain overlay. */
+body::after{content:none!important}
