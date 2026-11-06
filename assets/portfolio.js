@@ -1,12 +1,11 @@
 (() => {
   const dialog = document.getElementById('project-dialog');
   if (!dialog || typeof dialog.showModal !== 'function') return;
-
   const title = document.getElementById('project-dialog-title');
   const preview = document.getElementById('project-dialog-preview');
   const description = document.getElementById('project-dialog-description');
   const action = document.getElementById('project-dialog-action');
-  const close = dialog.querySelector('.project-dialog-close');
+  const close = dialog.querySelector('.dialog-close');
   let lastTrigger = null;
 
   document.querySelectorAll('[data-project-preview]').forEach(card => {
@@ -19,20 +18,15 @@
       lastTrigger = card;
       card.setAttribute('aria-expanded', 'true');
       title.textContent = card.querySelector('h3, h4')?.textContent.trim() || 'Project preview';
-      description.textContent = card.querySelector('.project-body p')?.textContent.trim() || '';
+      description.textContent = card.querySelector('p')?.textContent.trim() || '';
       action.href = card.href;
-      action.textContent = card.querySelector('.project-link')?.textContent.trim() || 'Open project';
       preview.replaceChildren();
-      const source = card.querySelector('.preview');
-      const image = source?.querySelector('img');
+      const image = card.querySelector('.work-image img, .preview img');
       if (image) {
         const clone = document.createElement('img');
         clone.src = image.currentSrc || image.src;
-        clone.alt = image.alt || `${title.textContent} preview`;
+        clone.alt = image.alt || title.textContent + ' preview';
         preview.append(clone);
-      } else if (source) {
-        const word = source.querySelector('.word');
-        if (word) preview.append(word.cloneNode(true));
       }
       dialog.showModal();
       close.focus();
