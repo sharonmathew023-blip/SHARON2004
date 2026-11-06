@@ -21,7 +21,7 @@
       title.textContent = card.querySelector('h3')?.textContent.trim() || 'Project preview';
       description.textContent = card.querySelector('.project-body p')?.textContent.trim() || '';
       action.href = card.href;
-      action.textContent = card.querySelector('.project-link')?.textContent.trim() || 'OPEN PROJECT';
+      action.textContent = card.querySelector('.project-link')?.textContent.trim() || 'Open project';
       preview.replaceChildren();
       const source = card.querySelector('.preview');
       const image = source?.querySelector('img');
