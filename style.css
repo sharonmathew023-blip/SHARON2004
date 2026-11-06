@@ -625,3 +625,65 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .film-status,.work-empty-status{display:inline-flex;align-items:center;gap:8px;padding:0!important;border:0!important;border-radius:0!important;background:none!important;color:var(--lime);font:10px var(--mono);letter-spacing:.04em}
 .work-empty-mark{font-weight:600!important}
 .btn{border-radius:6px!important}
+
+
+/* Final hero and type correction. Keep this block last to override legacy rules. */
+body{font-size:16px}
+body p{font-size:1.04em}
+body small{font-size:1.02em}
+.nav .links a{font-size:13px}
+.heading{font-size:clamp(34px,5.2vw,54px)}
+.work-lead{font-size:14px}
+.work-category-copy,.work-projects .project p,.work-empty p,.cap p,.about p,.film-copy p{font-size:13.5px}
+.chip{font-size:12.5px}
+.case-note,.project-link,.cap small,.profile-type,.film-kicker,.film-status,.film-bottom,.education-state,.learning-kicker{font-size:11px}
+.hero{padding:clamp(64px,10vw,112px) 0 clamp(64px,9vw,100px)!important;min-height:0!important}
+.hero .eyebrow,.hero .intro,.hero .actions .btn{ text-transform:uppercase!important; letter-spacing:.075em!important }
+.hero .eyebrow{font-size:12px!important;margin-bottom:22px!important}
+.hero .name{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  margin:0!important;
+  font-size:clamp(68px,12.5vw,148px)!important;
+  line-height:.88!important;
+  letter-spacing:-.085em!important;
+}
+.hero .name .sharon{
+  display:inline-block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:transparent!important;
+  background:linear-gradient(105deg,#c8ff3d 0%,#d8ff8b 48%,#a9e8c0 100%)!important;
+  background-size:180% 100%!important;
+  background-position:0% 50%;
+  background-clip:text!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:0!important;
+  animation:sharonSubtleShift 22s ease-in-out infinite alternate!important;
+}
+.hero .name .outline{
+  display:inline-block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:transparent!important;
+  background:none!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:1.7px #c8ff3d!important;
+  paint-order:stroke!important;
+  animation:mathewSubtleStroke 24s ease-in-out infinite alternate!important;
+}
+.hero .name .dot{color:#c8ff3d!important;-webkit-text-fill-color:#c8ff3d!important;animation:mathewSubtleStroke 24s ease-in-out infinite alternate!important}
+.hero .intro{max-width:620px!important;margin-top:28px!important;font-size:14px!important;line-height:1.8!important}
+.hero .actions{margin-top:28px!important}
+.hero .actions .btn{font-size:12px!important;padding:13px 18px!important}
+@keyframes sharonSubtleShift{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes mathewSubtleStroke{from{-webkit-text-stroke-color:#c8ff3d}to{-webkit-text-stroke-color:#a9e8c0}}
+@media(max-width:600px){
+ .hero{padding:58px 0 70px!important}
+ .hero .name{font-size:clamp(58px,13.2vw,88px)!important}
+ .hero .eyebrow{font-size:10px!important}
+ .hero .intro{font-size:13px!important}
+}
+@media(prefers-reduced-motion:reduce){.hero .name .sharon,.hero .name .outline,.hero .name .dot{animation:none!important}}
