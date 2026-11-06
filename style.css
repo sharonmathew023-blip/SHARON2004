@@ -616,3 +616,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 @keyframes sharonColourFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
 @keyframes mathewStrokeShift{to{filter:hue-rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.name .sharon,.name .outline,.name .dot{animation:none!important;filter:none!important}}
+
+
+/* Design cleanup: keep the page quiet and let the work carry the visual weight. */
+.d-rings,.d-dots{display:none!important}
+.chips{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px}
+.chip{padding:0!important;border:0!important;border-radius:0!important;background:none!important;color:var(--muted);font:12px var(--mono);}
+.film-status,.work-empty-status{display:inline-flex;align-items:center;gap:8px;padding:0!important;border:0!important;border-radius:0!important;background:none!important;color:var(--lime);font:10px var(--mono);letter-spacing:.04em}
+.work-empty-mark{font-weight:600!important}
+.btn{border-radius:6px!important}
