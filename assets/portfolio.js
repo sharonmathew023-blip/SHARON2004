@@ -18,7 +18,7 @@
       event.preventDefault();
       lastTrigger = card;
       card.setAttribute('aria-expanded', 'true');
-      title.textContent = card.querySelector('h3')?.textContent.trim() || 'Project preview';
+      title.textContent = card.querySelector('h3, h4')?.textContent.trim() || 'Project preview';
       description.textContent = card.querySelector('.project-body p')?.textContent.trim() || '';
       action.href = card.href;
       action.textContent = card.querySelector('.project-link')?.textContent.trim() || 'Open project';

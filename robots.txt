@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sharonmathew023-blip.github.io/SHARON2004/sitemap.xml
