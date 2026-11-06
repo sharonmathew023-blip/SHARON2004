@@ -585,3 +585,34 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .work-empty p{position:relative;z-index:1;margin:0;color:var(--muted);font-size:12px}
 @media(max-width:760px){.work-intro{grid-template-columns:1fr;gap:16px}.work-categories{grid-template-columns:1fr}.work-category-web{grid-column:auto}.work-projects .project{grid-template-columns:1fr}.work-projects .preview{height:240px;min-height:0}}
 @media(max-width:430px){.work-category{padding:18px}.work-category-head{margin-bottom:18px}.work-count{font-size:9px}}
+
+
+/* Animated wordmark: SHARON has a shifting colour fill; MATHEW stays hollow with a shifting stroke. */
+.name .sharon{
+  display:inline-block;
+  color:transparent!important;
+  background:linear-gradient(100deg,#ccff00 0%,#53e0bd 22%,#7b8cff 45%,#d77bff 66%,#ff9a66 82%,#ccff00 100%);
+  background-size:300% 100%;
+  background-position:0% 50%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:0!important;
+  animation:sharonColourFlow 10s ease-in-out infinite alternate!important;
+}
+.name .outline{
+  color:transparent!important;
+  background:none!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:2px #ccff00!important;
+  filter:hue-rotate(0deg);
+  animation:mathewStrokeShift 12s linear infinite!important;
+}
+.name .dot{
+  color:#ccff00!important;
+  filter:hue-rotate(0deg);
+  animation:mathewStrokeShift 12s linear infinite!important;
+}
+@keyframes sharonColourFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes mathewStrokeShift{to{filter:hue-rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.name .sharon,.name .outline,.name .dot{animation:none!important;filter:none!important}}
