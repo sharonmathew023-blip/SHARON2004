@@ -40,3 +40,12 @@ script changes were necessary for the local HTTP smoke test.
 - The browser checklist was not executed; it is a manual acceptance procedure,
   not coverage provided by the HTTP test. Third-party availability, production deployment settings,
   macOS/WSL execution and prerequisite installers were not verified by this audit.
+
+## Base-branch update during conflict resolution
+
+Later on 2026-11-09, `main` at `169a49a` added a portfolio README,
+`.github/workflows/pages.yml` and `.nojekyll`. The merge preserves the portfolio
+overview and license notice alongside the verified setup instructions. Current
+README deployment notes now describe the Pages workflow; the original findings
+above remain a record of the starting commit, not the updated repository.
+The workflow deploys static files and does not provide automated test coverage.

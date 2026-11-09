@@ -1,7 +1,28 @@
-# Sharon Mathew — portfolio
+# Sharon Mathew | Creative Portfolio
 
-A static portfolio built with HTML, CSS and browser JavaScript.
-[Live site](https://sharonmathew023-blip.github.io/SHARON2004/).
+A personal portfolio showcasing video editing, graphic design, web projects, and creative learning.
+
+**Live portfolio:** https://sharonmathew023-blip.github.io/SHARON2004/
+
+## About
+
+The site introduces Sharon Mathew, a student and creative from Kannur, Kerala, India. It brings together selected web projects, video-editing work, graphic design profiles, education, and contact links.
+
+## Site sections
+
+- Hero and introduction.
+- About and current learning.
+- Selected web project.
+- Instagram video-editing and graphic-design profiles.
+- Creative work and contact information.
+
+## Technology
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- Google Fonts
+- SnapWidget embed for social content
 
 ## Prerequisites
 
@@ -66,7 +87,8 @@ echo 'HTTP smoke test passed.'
 ```
 
 This checks local HTTP serving, not JavaScript behavior or third-party services.
-There is no automated unit-test runner or CI configuration in this repository.
+There is no automated unit-test runner in this repository. The GitHub Actions
+workflow publishes the static site; it does not run these checks.
 Also check these behaviors in the browser:
 
 1. The page loads with styling and the Valentine project image. On a first visit,
@@ -111,7 +133,16 @@ Publish the repository files unchanged to a static host, retaining their relativ
 paths; there is no `dist/` output. The canonical URL, social metadata, structured
 data, `robots.txt` and `sitemap.xml` currently target the live GitHub Pages URL
 above. Update these if hosting at a different address. GitHub Pages settings are
-managed outside the repository; there is no checked-in deployment workflow.
+managed outside the repository. The checked-in
+[Pages workflow](.github/workflows/pages.yml) uploads the repository root and
+deploys it on eligible pushes to `main` or a manual workflow dispatch. It skips
+pushes that change only `README.md`, `Screenshot_*` or the workflow itself. Keep
+asset paths relative so they work under the `/SHARON2004/` project-site path;
+`.nojekyll` is retained at the root for static hosting.
 
 See [the setup audit](docs/setup-audit.md) for the original gaps and verification
 scope.
+
+## License
+
+No license is currently specified. All rights remain with the repository owner unless a license is added.
