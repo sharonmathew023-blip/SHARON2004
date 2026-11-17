@@ -1,32 +1,32 @@
 # Sharon Mathew | Creative Portfolio
 
-A personal portfolio showcasing video editing, graphic design, web projects, and creative learning.
+A personal portfolio bringing together video editing, graphic design, selected web projects, and creative learning.
 
 **Live portfolio:** https://sharonmathew023-blip.github.io/SHARON2004/
 
-## About
+## About the site
 
-The site introduces Sharon Mathew, a student and creative from Kannur, Kerala, India. It brings together selected web projects, video-editing work, graphic design profiles, education, and contact links.
+The portfolio introduces Sharon Mathew and showcases selected creative work, web projects, education, and contact links.
 
-## Site sections
+## What's included
 
-- Hero and introduction.
-- About and current learning.
+- Personal introduction and about section.
 - Selected web project.
-- Instagram video-editing and graphic-design profiles.
+- Video-editing and graphic-design profiles.
 - Creative work and contact information.
+- Responsive layouts and light/dark presentation.
 
-## Technology
+## Built with
 
 - HTML
 - CSS
 - Vanilla JavaScript
 - Google Fonts
-- SnapWidget embed for social content
+- SnapWidget for embedded social content
 
 ## Run locally
 
-Serve the repository root so relative asset paths work:
+Serve the repository root so relative asset paths resolve correctly:
 
 ```bash
 python -m http.server 8000
@@ -37,12 +37,12 @@ Open http://localhost:8000.
 ## Project structure
 
 - `index.html`: page structure and content.
-- `style.css`: responsive layout and visual styles.
-- `assets/`: images, icons, and supporting scripts.
+- `style.css`: layout, responsive rules, and visual styles.
+- `assets/`: images, icons, and supporting assets.
 
 ## Deployment
 
-The site is a static website published through GitHub Pages. Keep asset paths relative to the repository so the project also works under the `/SHARON2004/` project-site path.
+The site is published through GitHub Pages. Keep asset paths relative to the repository so the project also works at the `/SHARON2004/` project-site path.
 
 ## License
 
