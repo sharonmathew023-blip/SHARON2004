@@ -49,3 +49,8 @@ overview and license notice alongside the verified setup instructions. Current
 README deployment notes now describe the Pages workflow; the original findings
 above remain a record of the starting commit, not the updated repository.
 The workflow deploys static files and does not provide automated test coverage.
+
+On 2026-11-17, merged `main` at `d245909`, retaining its refreshed portfolio
+introduction, section list and technology descriptions alongside the setup guide.
+The base's `index.html` fixes are preserved unchanged. Re-ran the documented
+HTTP smoke test against the merged checkout: all nine requests returned HTTP 200.
